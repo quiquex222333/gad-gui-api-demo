@@ -17,6 +17,8 @@
     "coverage:report": "node coverage-tool/bin/coverage.js report",
     "coverage:diff": "node coverage-tool/bin/coverage.js diff",
     "check:guard": "node scripts/check-guard.js",
+    "quality:snapshot": "node scripts/quality-report/snapshot.js --report coverage-tool/out/report.json --gaps coverage-tool/out/gaps.json --results api-tests/reports/results.json --out quality-snapshot/local/snapshot.json",
+    "quality:build": "node scripts/quality-report/build.js --snapshots quality-snapshot --out quality-site",
     "test:guard": "node --test scripts/test/*.test.js",
     "start:readonly": "set READ_ONLY=1 && node server.js",
     "start:ssl": "set SSL_ENABLED=1 && node server.js",

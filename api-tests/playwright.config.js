@@ -10,7 +10,12 @@ module.exports = defineConfig({
   globalSetup: require.resolve('./src/global-setup'),
   workers: 1,
   fullyParallel: false,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  // The JSON reporter feeds the quality report (scripts/quality-report); keep its path in sync with the workflow.
+  reporter: [
+    ['list'],
+    ['html', { open: 'never' }],
+    ['json', { outputFile: 'reports/results.json' }],
+  ],
   use: { baseURL: config.BASE_URL },
   webServer: {
     command: 'node server.js',
