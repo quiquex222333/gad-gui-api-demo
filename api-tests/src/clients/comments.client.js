@@ -11,16 +11,16 @@ class CommentsClient extends BaseClient {
     return this.send('GET', PATHS.item, { pathParams: { id } });
   }
 
-  create(data) {
-    return this.send('POST', PATHS.list, { data });
+  create(data, headers) {
+    return this.send('POST', PATHS.list, { data, headers });
   }
 
-  put(id, data) {
-    return this.send('PUT', PATHS.item, { pathParams: { id }, data });
+  put(id, data, headers) {
+    return this.send('PUT', PATHS.item, { pathParams: { id }, data, headers });
   }
 
-  patch(id, data) {
-    return this.send('PATCH', PATHS.item, { pathParams: { id }, data });
+  patch(id, data, headers) {
+    return this.send('PATCH', PATHS.item, { pathParams: { id }, data, headers });
   }
 
   delete(id) {
