@@ -313,6 +313,61 @@
         }
       }
     },
+    "/articles/{id}/archive": {
+      "post": {
+        "tags": ["articles"],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Archives an article",
+        "description": "Archives an article without deleting it. Only the article owner or an admin can archive. Archived articles are still returned by GET /articles/{id}.",
+        "operationId": "archiveArticle",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of article to archive",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Article archived",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Article"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Access token missing or invalid, or user is not the owner of the article",
+            "content": {}
+          },
+          "404": {
+            "description": "Article not found",
+            "content": {}
+          },
+          "409": {
+            "description": "Article is already archived",
+            "content": {}
+          }
+        }
+      }
+    },
     "/articles/{id}": {
       "get": {
         "tags": ["articles"],
@@ -6232,6 +6287,17 @@
           "image": {
             "type": "string",
             "description": "Image path"
+          },
+          "archived": {
+            "type": "boolean",
+            "description": "True when the article was archived. Set only by POST /articles/{id}/archive",
+            "readOnly": true
+          },
+          "archived_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Archive date. Set only by POST /articles/{id}/archive",
+            "readOnly": true
           }
         },
         "xml": {

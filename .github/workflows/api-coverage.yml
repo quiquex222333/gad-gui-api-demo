@@ -3,6 +3,7 @@ name: api-coverage
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -74,6 +75,24 @@ jobs:
             coverage-tool/out/gaps.json
           if-no-files-found: error
 
+      # Compact metrics of this run (tests + coverage); the quality-report job joins the last 5 of them.
+      - name: Quality snapshot
+        if: ${{ !cancelled() }}
+        run: |
+          node scripts/quality-report/snapshot.js \
+            --report coverage-tool/out/report.json \
+            --gaps coverage-tool/out/gaps.json \
+            --results api-tests/reports/results.json \
+            --out quality-snapshot/snapshot.json
+
+      - name: Upload quality snapshot
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-snapshot
+          path: quality-snapshot/snapshot.json
+          if-no-files-found: error
+
       - name: Upload Playwright report
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
@@ -85,6 +104,92 @@ jobs:
       - name: Server log on failure
         if: failure()
         run: cat server.log
+
+  # Pushes and manual runs: build the quality report (current run + the previous 4 of the same branch).
+  # The site is always uploaded as the `quality-report-site` artifact; on main it is also deployed to GitHub Pages.
+  quality-report:
+    needs: api-coverage
+    if: ${{ !cancelled() && github.event_name != 'pull_request' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    env:
+      HISTORY: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Download this run's snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: quality-snapshot
+          path: snapshots/${{ github.run_id }}
+
+      # Older runs only kept `coverage-report` (report.json + gaps.json): those become coverage-only snapshots.
+      - name: Download previous snapshots
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          need=$((HISTORY - 1))
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/api-coverage.yml/runs?branch=$BRANCH&status=completed&per_page=40" \
+            --jq ".workflow_runs[] | select(.id != $GITHUB_RUN_ID and .event != \"pull_request\")
+                  | [.id, .run_number, .head_sha, .event, .actor.login, .created_at, .html_url] | @tsv" > runs.tsv || true
+          got=0
+          while IFS=$'\t' read -r id number sha event actor created url; do
+            [ "$got" -ge "$need" ] && break
+            if gh run download "$id" -n quality-snapshot -D "snapshots/$id" 2> /dev/null; then
+              got=$((got + 1)); echo "run $id: quality-snapshot"
+            elif gh run download "$id" -n coverage-report -D "legacy/$id" 2> /dev/null && [ -f "legacy/$id/report.json" ]; then
+              node scripts/quality-report/snapshot.js --report "legacy/$id/report.json" --gaps "legacy/$id/gaps.json" \
+                --out "snapshots/$id/snapshot.json" --run-id "$id" --run-number "$number" --sha "$sha" \
+                --branch "$BRANCH" --event "$event" --actor "$actor" --created-at "$created" --run-url "$url"
+              got=$((got + 1))
+            else
+              echo "run $id: no usable artifact (expired or failed before upload)"
+            fi
+          done < runs.tsv
+          echo "previous snapshots found: $got of $need"
+
+      - name: Build report
+        run: node scripts/quality-report/build.js --snapshots snapshots --out site --limit "$HISTORY"
+
+      - name: Upload report site
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-report-site
+          path: site
+          include-hidden-files: true
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy-pages:
+    needs: quality-report
+    if: ${{ !cancelled() && needs.quality-report.result == 'success' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
   # Pull requests only: measure base and head side by side (each from its own tree, server and spec),
   # diff them with the HEAD coverage-tool, and publish a sticky comment. A coverage decrease never fails
