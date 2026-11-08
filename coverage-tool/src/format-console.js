@@ -106,4 +106,4 @@ function formatDiff(diff) {
   return out.join('\n') + '\n';
 }
 
-module.exports = { formatReport, formatDiff };
+module.exports = { formatReport, formatDiff, pct, frac };

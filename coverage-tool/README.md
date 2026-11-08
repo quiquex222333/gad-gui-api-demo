@@ -55,6 +55,17 @@ Writes `report.json` and `gaps.json`, prints a console summary, and prints warni
 Both inputs must be `report.json` files with `schemaVersion` major 1. Missing or null `summary.global`
 is tolerated; its deltas are reported as `n/a`.
 
+`html <report.json> [--diff <diff.json>] [-o coverage.html]`
+
+One self-contained file (inline CSS, no scripts, no external assets, no timestamps). Shows the scope headline per
+dimension, deltas when `--diff` is given, an operations table (covered / missing / undocumented statuses) and open
+gaps grouped by operation.
+
+`summary <report.json> [--diff <diff.json>] [-o file]`
+
+Markdown for PR comments and `$GITHUB_STEP_SUMMARY`: base | head | delta per dimension (scope), gaps closed, gaps
+opened, and the top 10 open in-scope gaps (operations, then statuses, then params). Prints to stdout without `-o`.
+
 Exit codes: `0` success, `1` regression (`diff --fail-on-opened` only), `2` usage or input error.
 Coverage level never changes the exit code of `report`.
 
@@ -106,3 +117,12 @@ parameters). It never changes coverage totals.
 `npm test` runs unit tests, byte-for-byte golden tests (`test/fixtures/expected/`), CLI/exit-code tests,
 diff tests, schema validation, determinism and a smoke test on the real repo. After an intentional
 output change, regenerate the goldens with `npm run update-golden` and review the diff.
+
+## Pull-request coverage (CI)
+
+Job `api-coverage-pr` in `.github/workflows/api-coverage.yml` checks out head, adds the base commit as a worktree in
+`./base`, runs each tree's API tests against its own server (base on 3006, head on 3005), builds both reports with the
+**head** coverage-tool, diffs them and renders `coverage.html` and `summary.md`. It uploads the `coverage-report`
+artifact, writes the job summary and creates/updates one sticky comment (`<!-- api-coverage -->`, authored by
+`github-actions[bot]`). A coverage decrease never fails the job. If base has no `api-tests/` or `coverage-tool/` (or
+recorded no requests), base is an empty report: same spec, zero requests. Fork PRs skip the comment (read-only token).

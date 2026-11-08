@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   api-coverage:
     runs-on: ubuntu-latest
@@ -82,3 +85,176 @@ jobs:
       - name: Server log on failure
         if: failure()
         run: cat server.log
+
+  # Pull requests only: measure base and head side by side (each from its own tree, server and spec),
+  # diff them with the HEAD coverage-tool, and publish a sticky comment. A coverage decrease never fails
+  # this job (Day 4 needs negative deltas visible, not blocking); failing head API tests still do.
+  api-coverage-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      pull-requests: write
+    concurrency:
+      group: api-coverage-pr-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
+    env:
+      HEAD_PORT: '3005'
+      BASE_PORT: '3006'
+      OUT: pr-coverage
+      COVERAGE_CLI: coverage-tool/bin/coverage.js
+    steps:
+      - name: Checkout head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Add base as worktree in ./base
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_SHA"
+          git worktree add --detach ./base "$BASE_SHA"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            api-tests/package-lock.json
+            coverage-tool/package-lock.json
+
+      - name: Install dependencies (head)
+        run: |
+          npm ci
+          npm ci --prefix api-tests
+          npm ci --prefix coverage-tool
+
+      - name: Install dependencies (base)
+        working-directory: base
+        run: |
+          npm ci
+          if [ -f api-tests/package-lock.json ]; then npm ci --prefix api-tests; fi
+
+      - name: Start servers (base on 3006, head on 3005)
+        run: |
+          start() { # <tree> <port> <log>
+            (cd "$1" && PORT="$2" nohup node server.js > "$GITHUB_WORKSPACE/$3" 2>&1 &)
+          }
+          wait_for() { # <port> <log>
+            for i in $(seq 1 60); do
+              if curl -sS -o /dev/null --max-time 2 "http://localhost:$1/api/restore/list" 2> /dev/null; then
+                echo "Server on port $1 is up after ${i}s"
+                return 0
+              fi
+              sleep 1
+            done
+            echo "Server on port $1 did not become ready in 60s" >&2
+            cat "$2" >&2
+            return 1
+          }
+          start base "$BASE_PORT" server-base.log
+          start . "$HEAD_PORT" server-head.log
+          wait_for "$BASE_PORT" server-base.log
+          wait_for "$HEAD_PORT" server-head.log
+
+      # Base tests are informational: a broken or missing base suite must not block the PR.
+      - name: Run API tests (base)
+        id: base-tests
+        continue-on-error: true
+        working-directory: base
+        env:
+          GAD_URL: http://localhost:3006
+        run: |
+          if [ ! -d api-tests ]; then
+            echo "base has no api-tests/; base coverage will be an empty report"
+            exit 0
+          fi
+          cd api-tests
+          npx playwright test
+
+      - name: Run API tests (head)
+        working-directory: api-tests
+        env:
+          GAD_URL: http://localhost:3005
+        run: npx playwright test
+
+      - name: Build reports, diff, html and summary
+        if: ${{ !cancelled() }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$OUT/base" "$OUT/head"
+
+          # Always the HEAD coverage-tool and config (identical algorithm); each tree's own spec and requests.
+          BASE_SPEC=base/public/tools/schema/openapi_rest_demo.json
+          [ -f "$BASE_SPEC" ] || BASE_SPEC=public/tools/schema/openapi_rest_demo.json
+          BASE_REQ=base/api-tests/.coverage/requests.jsonl
+          if [ ! -d base/api-tests ] || [ ! -d base/coverage-tool ] || [ ! -f "$BASE_REQ" ]; then
+            echo "base lacks api-tests/, coverage-tool/ or recorded requests: treating base as an empty report"
+            BASE_REQ="$OUT/empty-requests.jsonl"
+            : > "$BASE_REQ"
+          fi
+
+          node "$COVERAGE_CLI" report --spec "$BASE_SPEC" --requests "$BASE_REQ" --out-dir "$OUT/base" > /dev/null
+          node "$COVERAGE_CLI" report --out-dir "$OUT/head" > /dev/null
+
+          # No --fail-on-opened: regressions are reported, never blocking.
+          node "$COVERAGE_CLI" diff "$OUT/base/report.json" "$OUT/head/report.json" --out "$OUT/diff.json"
+          node "$COVERAGE_CLI" html "$OUT/head/report.json" --diff "$OUT/diff.json" -o "$OUT/coverage.html"
+          node "$COVERAGE_CLI" summary "$OUT/head/report.json" --diff "$OUT/diff.json" -o "$OUT/summary.md"
+
+      - name: Write job summary
+        if: ${{ !cancelled() }}
+        run: cat "$OUT/summary.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload coverage report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: |
+            pr-coverage/coverage.html
+            pr-coverage/base/report.json
+            pr-coverage/head/report.json
+            pr-coverage/diff.json
+            pr-coverage/head/gaps.json
+          if-no-files-found: error
+
+      # Forks get a read-only GITHUB_TOKEN, so the comment is skipped for them (step summary still has it).
+      - name: Create or update sticky PR comment
+        if: ${{ !cancelled() && github.event.pull_request.head.repo.full_name == github.repository }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          MARKER='<!-- api-coverage -->'
+          {
+            echo "$MARKER"
+            cat "$OUT/summary.md"
+            echo
+            echo "[Full report: artifact \`coverage-report\`]($RUN_URL#artifacts)"
+          } > "$OUT/comment.md"
+
+          # Only trust comments authored by the Actions bot, so quoting the marker cannot hijack the update.
+          COMMENT_ID=$(gh api --paginate "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" \
+            --jq ".[] | select(.user.login == \"github-actions[bot]\" and (.body | contains(\"$MARKER\"))) | .id" \
+            | sed -n 1p)
+
+          if [ -n "$COMMENT_ID" ]; then
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$COMMENT_ID" -F body=@"$OUT/comment.md" > /dev/null
+            echo "Updated comment $COMMENT_ID"
+          else
+            gh api --method POST "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" -F body=@"$OUT/comment.md" > /dev/null
+            echo "Created comment"
+          fi
+
+      - name: Server logs on failure
+        if: failure()
+        run: |
+          for f in server-base.log server-head.log; do
+            echo "::group::$f"; cat "$f" || true; echo "::endgroup::"
+          done
