@@ -17,6 +17,7 @@ const { handleQuiz } = require("../endpoints/quiz-endpoint.helpers");
 const { handleConfig } = require("../endpoints/config-endpoint.helpers");
 const { handleUsers } = require("../endpoints/users-endpoint.helpers");
 const { handleArticles } = require("../endpoints/articles-endpoint.helpers");
+const { handleArticleArchive } = require("../endpoints/articles-archive-endpoint.helpers");
 const { handleComments } = require("../endpoints/comments-endpoint.helpers");
 const { handleLikes } = require("../endpoints/likes-endpoint.helpers");
 const { handleLabels } = require("../endpoints/labels-endpoint.helpers");
@@ -231,6 +232,10 @@ const validationsRoutes = (req, res, next) => {
 
     if (req.url.includes("/api/users")) {
       handleUsers(req, res, userAuth);
+    }
+
+    if (req.url.includes("/api/articles") && handleArticleArchive(req, res, userAuth)) {
+      return;
     }
 
     if (req.url.includes("/api/articles") || req.url.includes("/api/random/article")) {
