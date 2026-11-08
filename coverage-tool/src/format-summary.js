@@ -63,6 +63,23 @@ function formatSummary(report, diff) {
   }
   out.push('');
 
+  const eff = report.summary.effective;
+  if (eff) {
+    out.push('**Effective coverage (waived ids excluded, scope):**');
+    out.push('');
+    out.push('| Dimension | Raw | Effective |');
+    out.push('|---|---:|---:|');
+    for (const d of DIMS) out.push(`| ${d} | ${metric(report.summary.scope[d])} | ${metric(eff.scope[d])} |`);
+    out.push('');
+    const ws = report.waivers || [];
+    out.push(`**Waived:** ${ws.length}`);
+    if (ws.length) {
+      out.push('');
+      out.push(...ws.map((w) => `- ${code(w.id)} (${w.kind}): ${cell(w.reason)}`));
+    }
+    out.push('');
+  }
+
   if (diff) {
     for (const [title, key] of [['Gaps closed', 'closed'], ['Gaps opened', 'opened']]) {
       const all = diff.gaps[key];

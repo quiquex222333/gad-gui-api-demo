@@ -64,6 +64,10 @@ function cards(report, diff) {
       out.push(`<div>${deltaHtml(x.deltaPercent, ' pp')} <span class="sub">(${deltaHtml(x.deltaCovered, '')} covered, ${deltaHtml(x.deltaTotal, '')} total vs base)</span></div>`);
     }
     out.push(`<div class="sub">global: ${esc(frac(g))} (${esc(pct(g && g.percent))})</div>`);
+    const e = report.summary.effective;
+    if (e) {
+      out.push(`<div class="sub">effective (waivers excluded): scope ${esc(frac(e.scope[d]))} (${esc(pct(e.scope[d].percent))}) · global ${esc(frac(e.global[d]))} (${esc(pct(e.global[d].percent))})</div>`);
+    }
     out.push('</div>');
   }
   out.push('</div>');
@@ -126,6 +130,21 @@ function idList(title, items) {
   }</div>`;
 }
 
+function waiversSection(report) {
+  const ws = report.waivers;
+  if (!ws) return '';
+  const rows = ws.map(
+    (w) => `<tr><td><code>${esc(w.id)}</code></td><td><span class="tag">${esc(w.kind)}</span></td><td>${esc(w.reason)}</td><td>${esc(w.evidence)}</td><td>${esc(w.approvedBy)}</td></tr>`,
+  );
+  return `<h2>Waived gaps (${ws.length})</h2>
+<p class="meta">Raw coverage above is unchanged; effective coverage excludes these ids from the denominator.</p>
+${ws.length ? `<div class="table-wrap"><table>
+<thead><tr><th>Id</th><th>Kind</th><th>Reason</th><th>Evidence</th><th>Approved by</th></tr></thead>
+<tbody>
+${rows.join('\n')}
+</tbody></table></div>` : '<p class="meta">none</p>'}`;
+}
+
 function diffSection(diff) {
   const ids = (k) => diff.gaps[k].map((g) => g.id);
   return `<h2>Changes vs base</h2>
@@ -157,7 +176,7 @@ function formatHtml(report, diff) {
 <div class="meta">spec <code>${esc(report.inputs.spec.path)}</code> (${esc(report.inputs.spec.sha256.slice(0, 12))}) · requests <code>${esc(report.inputs.requests.path)}</code> (${esc(report.inputs.requests.sha256.slice(0, 12))}) · ${L.counted} counted of ${L.total} lines</div>
 ${cards(report, diff)}
 ${diff ? diffSection(diff) : ''}
-<h2>Operations</h2>
+${report.waivers ? waiversSection(report) + '\n' : ''}<h2>Operations</h2>
 ${operationsTable(report)}
 <h2>Open gaps by operation</h2>
 ${gapGroups(report)}

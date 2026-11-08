@@ -34,6 +34,18 @@ function formatReport(report, files) {
       ['l', 'r', 'r', 'r', 'r'],
     ),
   );
+  if (s.effective) {
+    out.push('');
+    out.push(`Effective coverage (${(report.waivers || []).length} waived, raw above is unchanged)`);
+    out.push(
+      table(
+        ['dimension', 'scope', 'scope %', 'global', 'global %'],
+        dims.map((d) => [d, frac(s.effective.scope[d]), pct(s.effective.scope[d].percent), frac(s.effective.global[d]), pct(s.effective.global[d].percent)]),
+        ['l', 'r', 'r', 'r', 'r'],
+      ),
+    );
+    for (const w of report.waivers || []) out.push(`  waived [${w.kind}] ${w.id}`);
+  }
   out.push('');
   out.push('In-scope operations');
   const rows = report.operations

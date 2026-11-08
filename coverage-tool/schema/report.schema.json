@@ -176,6 +176,22 @@
         },
         "global": {
           "$ref": "#/$defs/dimensions"
+        },
+        "effective": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "scope",
+            "global"
+          ],
+          "properties": {
+            "scope": {
+              "$ref": "#/$defs/dimensions"
+            },
+            "global": {
+              "$ref": "#/$defs/dimensions"
+            }
+          }
         }
       }
     },
@@ -218,6 +234,12 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/warning"
+      }
+    },
+    "waivers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/waiver"
       }
     }
   },
@@ -523,7 +545,9 @@
             "PATH_TEMPLATE_MISMATCH",
             "AMBIGUOUS_TEMPLATE",
             "NON_NUMERIC_RESPONSE_KEY",
-            "INVALID_LINE"
+            "INVALID_LINE",
+            "WAIVER_UNKNOWN_ID",
+            "WAIVER_COVERED"
           ]
         },
         "message": {
@@ -532,6 +556,41 @@
         "count": {
           "type": "integer",
           "minimum": 1
+        }
+      }
+    },
+    "waiver": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "reason",
+        "evidence",
+        "approvedBy",
+        "covered"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "unreachable",
+            "known-bug"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "string"
+        },
+        "approvedBy": {
+          "type": "string"
+        },
+        "covered": {
+          "type": "boolean"
         }
       }
     }

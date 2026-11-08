@@ -1,3 +1,5 @@
 warning INVALID_LINE: line 10: invalid JSON
 warning NON_NUMERIC_RESPONSE_KEY: GET /users: response key "default" ignored
 warning PATH_TEMPLATE_MISMATCH: GET /articles/search: recorder "/articles/{id}" != derived "/articles/search"
+warning WAIVER_COVERED: waiver "GET /articles" is already covered; it is no longer needed
+warning WAIVER_UNKNOWN_ID: waiver "GET /gone#200" matches no documented item in the spec (stale?)

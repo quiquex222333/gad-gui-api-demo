@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npx playwright test)",
+      "Bash(npx playwright test *)",
+      "Bash(node coverage-tool/bin/coverage.js *)",
+      "Bash(node ../coverage-tool/bin/coverage.js *)",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff)",
+      "Bash(git diff *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git checkout -b *)",
+      "Bash(git push)",
+      "Bash(git push *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr view)",
+      "Bash(gh pr view *)"
+    ],
+    "deny": [
+      "Edit(/db/**)",
+      "Edit(/.claude/settings.json)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git push * --force*)",
+      "Bash(git push * -f*)",
+      "Bash(git push --force-with-lease*)",
+      "Bash(git push * --force-with-lease*)"
+    ]
+  }
+}

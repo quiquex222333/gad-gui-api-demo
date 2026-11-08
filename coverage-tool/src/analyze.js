@@ -44,7 +44,9 @@ class WarningBag {
 
 // Pure: (spec model, parsed requests, config, meta) -> report object (spec §10).
 // meta: { toolVersion, specPath, requestsPath, configPath|null }
-function analyze(spec, requests, config, meta) {
+// waivers: validated list from waivers.js (default none). RAW summary is unaffected; summary.effective
+// drops waived items from numerator and denominator.
+function analyze(spec, requests, config, meta, waivers = []) {
   const warnings = new WarningBag();
   for (const w of spec.warnings || []) warnings.add(w.code, w.message);
   for (const w of requests.warnings || []) warnings.add(w.code, w.message);
@@ -172,19 +174,48 @@ function analyze(spec, requests, config, meta) {
   }
   operations.sort(compareCanonical);
 
+  // ---- waivers ----
+  // Ids of every documented item (operation, status, param), as in gaps.json.
+  const itemState = new Map();
+  for (const o of operations) {
+    itemState.set(o.id, o.requests > 0);
+    for (const s of o.statuses) if (s.documented) itemState.set(`${o.id}#${s.status}`, s.requests > 0);
+    for (const p of o.parameters) if (p.documented) itemState.set(`${o.id}?${p.in}.${p.name}`, p.requests > 0);
+  }
+  const waived = new Set();
+  const waiverList = [];
+  for (const w of waivers) {
+    if (!itemState.has(w.id)) {
+      warnings.add('WAIVER_UNKNOWN_ID', `waiver "${w.id}" matches no documented item in the spec (stale?)`);
+      continue;
+    }
+    waived.add(w.id);
+    const covered = itemState.get(w.id);
+    if (covered) warnings.add('WAIVER_COVERED', `waiver "${w.id}" is already covered; it is no longer needed`);
+    waiverList.push({ id: w.id, kind: w.kind, reason: w.reason, evidence: w.evidence, approvedBy: w.approvedBy, covered });
+  }
+
   // ---- dimensions ----
-  function dimensions(ops) {
-    let oc = 0, sc = 0, st = 0, pc = 0, pt = 0;
+  function dimensions(ops, skip) {
+    let oc = 0, ot = 0, sc = 0, st = 0, pc = 0, pt = 0;
+    const skipped = (id) => skip && skip.has(id);
     for (const o of ops) {
-      if (o.covered) oc++;
-      for (const s of o.statuses) if (s.documented) { st++; if (s.requests > 0) sc++; }
+      if (!skipped(o.id)) {
+        ot++;
+        if (o.covered) oc++;
+      }
+      for (const s of o.statuses) {
+        if (!s.documented || skipped(`${o.id}#${s.status}`)) continue;
+        st++;
+        if (s.requests > 0) sc++;
+      }
       for (const p of o.parameters) {
-        if (!p.documented) continue;
+        if (!p.documented || skipped(`${o.id}?${p.in}.${p.name}`)) continue;
         pt++;
         if (p.requests > 0) pc++;
       }
     }
-    return { operations: metric(oc, ops.length), statuses: metric(sc, st), parameters: metric(pc, pt) };
+    return { operations: metric(oc, ot), statuses: metric(sc, st), parameters: metric(pc, pt) };
   }
 
   // ---- drift ----
@@ -249,7 +280,12 @@ function analyze(spec, requests, config, meta) {
     summary: {
       scope: dimensions(operations.filter((o) => o.inScope)),
       global: dimensions(operations),
+      effective: {
+        scope: dimensions(operations.filter((o) => o.inScope), waived),
+        global: dimensions(operations, waived),
+      },
     },
+    waivers: waiverList,
     operations,
     drift: {
       unmatchedRequests,
