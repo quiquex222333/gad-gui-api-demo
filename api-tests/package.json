@@ -1,0 +1,14 @@
+{
+  "name": "gad-api-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright API regression suite for the GAD REST API",
+  "scripts": {
+    "test": "playwright test",
+    "test:report": "playwright show-report",
+    "check:guard": "node scripts/check-no-direct-request.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}
