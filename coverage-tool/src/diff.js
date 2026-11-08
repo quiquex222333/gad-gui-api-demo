@@ -87,4 +87,4 @@ function diffReports(base, head, meta) {
   };
 }
 
-module.exports = { diffReports };
+module.exports = { diffReports, checkVersion };

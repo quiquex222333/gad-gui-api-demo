@@ -10,8 +10,10 @@ const { loadSpec } = require('../src/spec-loader');
 const { loadRequests } = require('../src/requests-loader');
 const { analyze } = require('../src/analyze');
 const { deriveGaps } = require('../src/gaps');
-const { diffReports } = require('../src/diff');
+const { diffReports, checkVersion } = require('../src/diff');
 const { formatReport, formatDiff } = require('../src/format-console');
+const { formatHtml } = require('../src/format-html');
+const { formatSummary } = require('../src/format-summary');
 const { writeJson } = require('../src/write-json');
 const pkg = require('../package.json');
 
@@ -20,6 +22,8 @@ const HELP = `gad-coverage <command> [options]
 Commands:
   report                      Compute coverage; write report.json and gaps.json
   diff <base.json> <head.json>  Compare two report.json files
+  html <report.json>          Render one self-contained HTML file
+  summary <report.json>       Render a markdown summary (PR comment / step summary)
 
 report options:
   --spec <file>       OpenAPI spec (default: public/tools/schema/openapi_rest_demo.json)
@@ -30,6 +34,14 @@ report options:
 diff options:
   --out <file>        Also write diff.json
   --fail-on-opened    Exit 1 if any gap was opened (regression)
+
+html options:
+  --diff <diff.json>  Show deltas and gap changes from a diff.json
+  -o, --out <file>    Output file (default: coverage.html)
+
+summary options:
+  --diff <diff.json>  Base | head | delta table and gaps closed/opened
+  -o, --out <file>    Write to a file instead of stdout
 
   -h, --help          Show this help
 
@@ -100,6 +112,43 @@ function cmdDiff(values, positionals) {
   return values['fail-on-opened'] && diff.gaps.opened.length > 0 ? 1 : 0;
 }
 
+function readOptionalDiff(values) {
+  if (!values.diff) return undefined;
+  const d = readReport(path.resolve(values.diff), 'diff').json;
+  checkVersion(d, 'diff');
+  return d;
+}
+
+function loadReportArg(positionals, cmd) {
+  if (positionals.length !== 1) throw new InputError(`${cmd} needs exactly one argument: <report.json>`);
+  const report = readReport(path.resolve(positionals[0]), 'input').json;
+  checkVersion(report, 'input');
+  return report;
+}
+
+function cmdHtml(values, positionals) {
+  const report = loadReportArg(positionals, 'html');
+  const html = formatHtml(report, readOptionalDiff(values));
+  const outFile = path.resolve(values.out || 'coverage.html');
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
+  fs.writeFileSync(outFile, html, 'utf8');
+  process.stdout.write(`Written: ${toRepoRelative(outFile)}\n`);
+  return 0;
+}
+
+function cmdSummary(values, positionals) {
+  const report = loadReportArg(positionals, 'summary');
+  const md = formatSummary(report, readOptionalDiff(values));
+  if (values.out) {
+    const outFile = path.resolve(values.out);
+    fs.mkdirSync(path.dirname(outFile), { recursive: true });
+    fs.writeFileSync(outFile, md, 'utf8');
+  } else {
+    process.stdout.write(md);
+  }
+  return 0;
+}
+
 async function main(argv) {
   let parsed;
   try {
@@ -112,7 +161,8 @@ async function main(argv) {
         requests: { type: 'string' },
         config: { type: 'string' },
         'out-dir': { type: 'string' },
-        out: { type: 'string' },
+        out: { type: 'string', short: 'o' },
+        diff: { type: 'string' },
         'fail-on-opened': { type: 'boolean' },
       },
     });
@@ -129,6 +179,8 @@ async function main(argv) {
   try {
     if (command === 'report') return await cmdReport(values);
     if (command === 'diff') return cmdDiff(values, rest);
+    if (command === 'html') return cmdHtml(values, rest);
+    if (command === 'summary') return cmdSummary(values, rest);
     process.stderr.write(`Unknown command "${command}"\n\n${HELP}`);
     return 2;
   } catch (e) {

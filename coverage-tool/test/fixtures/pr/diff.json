@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0.0",
+  "base": {
+    "path": "base-report.json",
+    "sha256": "d65bd5ca361634106564a7159be78e34fa587f8128d9f0f2271b3dd301e4e80a"
+  },
+  "head": {
+    "path": "head-report.json",
+    "sha256": "52c3b9ecabfa51f8ca7723ec3663dd13ed3dc280b362c25f520eab77fdbeed35"
+  },
+  "summary": {
+    "scope": {
+      "operations": {
+        "base": {
+          "covered": 5,
+          "total": 6,
+          "percent": 83.33
+        },
+        "head": {
+          "covered": 5,
+          "total": 7,
+          "percent": 71.43
+        },
+        "deltaCovered": 0,
+        "deltaTotal": 1,
+        "deltaPercent": -11.9
+      },
+      "statuses": {
+        "base": {
+          "covered": 4,
+          "total": 8,
+          "percent": 50
+        },
+        "head": {
+          "covered": 4,
+          "total": 9,
+          "percent": 44.44
+        },
+        "deltaCovered": 0,
+        "deltaTotal": 1,
+        "deltaPercent": -5.56
+      },
+      "parameters": {
+        "base": {
+          "covered": 6,
+          "total": 7,
+          "percent": 85.71
+        },
+        "head": {
+          "covered": 5,
+          "total": 8,
+          "percent": 62.5
+        },
+        "deltaCovered": -1,
+        "deltaTotal": 1,
+        "deltaPercent": -23.21
+      }
+    },
+    "global": {
+      "operations": {
+        "base": {
+          "covered": 6,
+          "total": 9,
+          "percent": 66.67
+        },
+        "head": {
+          "covered": 6,
+          "total": 9,
+          "percent": 66.67
+        },
+        "deltaCovered": 0,
+        "deltaTotal": 0,
+        "deltaPercent": 0
+      },
+      "statuses": {
+        "base": {
+          "covered": 5,
+          "total": 11,
+          "percent": 45.45
+        },
+        "head": {
+          "covered": 5,
+          "total": 11,
+          "percent": 45.45
+        },
+        "deltaCovered": 0,
+        "deltaTotal": 0,
+        "deltaPercent": 0
+      },
+      "parameters": {
+        "base": {
+          "covered": 7,
+          "total": 9,
+          "percent": 77.78
+        },
+        "head": {
+          "covered": 6,
+          "total": 10,
+          "percent": 60
+        },
+        "deltaCovered": -1,
+        "deltaTotal": 1,
+        "deltaPercent": -17.78
+      }
+    }
+  },
+  "gaps": {
+    "closed": [
+      {
+        "id": "GET /comments",
+        "type": "operation",
+        "inScope": true,
+        "method": "GET",
+        "path": "/comments"
+      },
+      {
+        "id": "GET /comments#200",
+        "type": "status",
+        "inScope": true,
+        "method": "GET",
+        "path": "/comments",
+        "status": 200
+      }
+    ],
+    "opened": [
+      {
+        "id": "GET /articles/search",
+        "type": "operation",
+        "inScope": true,
+        "method": "GET",
+        "path": "/articles/search"
+      },
+      {
+        "id": "GET /articles/search#200",
+        "type": "status",
+        "inScope": true,
+        "method": "GET",
+        "path": "/articles/search",
+        "status": 200
+      },
+      {
+        "id": "GET /articles/search?query.query",
+        "type": "param",
+        "inScope": true,
+        "method": "GET",
+        "path": "/articles/search",
+        "in": "query",
+        "param": "query"
+      }
+    ],
+    "added": [
+      {
+        "id": "PUT /articles/{id}",
+        "type": "operation",
+        "inScope": true,
+        "method": "PUT",
+        "path": "/articles/{id}"
+      },
+      {
+        "id": "PUT /articles/{id}#200",
+        "type": "status",
+        "inScope": true,
+        "method": "PUT",
+        "path": "/articles/{id}",
+        "status": 200
+      },
+      {
+        "id": "PUT /articles/{id}?path.id",
+        "type": "param",
+        "inScope": true,
+        "method": "PUT",
+        "path": "/articles/{id}",
+        "in": "path",
+        "param": "id"
+      }
+    ],
+    "removed": [
+      {
+        "id": "GET /users",
+        "type": "operation",
+        "inScope": false,
+        "method": "GET",
+        "path": "/users"
+      },
+      {
+        "id": "GET /users#200",
+        "type": "status",
+        "inScope": false,
+        "method": "GET",
+        "path": "/users",
+        "status": 200
+      }
+    ]
+  },
+  "drift": {
+    "added": [],
+    "removed": []
+  }
+}
