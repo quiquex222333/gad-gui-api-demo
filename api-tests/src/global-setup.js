@@ -6,14 +6,14 @@ const { SystemClient } = require('./clients');
 module.exports = async function globalSetup() {
   if (process.env.COVERAGE_APPEND !== '1') recorder.reset();
 
-  const ctx = await request.newContext({ baseURL: config.GAD_URL });
+  const ctx = await request.newContext({ baseURL: config.BASE_URL });
   try {
     let res;
     try {
-      res = await new SystemClient(ctx).restoreTestDb();
+      res = await new SystemClient(ctx, { source: 'setup' }).restoreTestDb();
     } catch (err) {
       throw new Error(
-        `GAD server is not reachable at ${config.GAD_URL}. Start it first (e.g. "PORT=3000 node server.js") or set GAD_URL. Cause: ${err.message}`,
+        `GAD server is not reachable at ${config.GAD_URL}. Start it first (e.g. "PORT=3005 node server.js") or set GAD_URL. Cause: ${err.message}`,
       );
     }
     if (res.status() !== 201) {

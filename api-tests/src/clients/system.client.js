@@ -1,6 +1,6 @@
 const BaseClient = require('./base.client');
 
-const PATHS = { restoreTestDb: '/api/restoreTestDB' };
+const PATHS = { restoreTestDb: '/restoreTestDB' };
 
 class SystemClient extends BaseClient {
   restoreTestDb() {

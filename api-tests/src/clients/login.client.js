@@ -1,6 +1,6 @@
 const BaseClient = require('./base.client');
 
-const PATHS = { login: '/api/login' };
+const PATHS = { login: '/login' };
 
 class LoginClient extends BaseClient {
   login(email, password) {

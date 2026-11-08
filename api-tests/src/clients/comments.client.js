@@ -1,6 +1,6 @@
 const BaseClient = require('./base.client');
 
-const PATHS = { list: '/api/comments', item: '/api/comments/{id}' };
+const PATHS = { list: '/comments', item: '/comments/{id}' };
 
 class CommentsClient extends BaseClient {
   list(params) {

@@ -5,14 +5,19 @@ function isPlainObject(v) {
 }
 
 class BaseClient {
-  constructor(request) {
+  /**
+   * @param {import('@playwright/test').APIRequestContext} request
+   * @param {{source?: 'test'|'setup'}} [opts] "setup" for calls made by globalSetup/fixtures
+   */
+  constructor(request, { source = 'test' } = {}) {
     this.request = request;
+    this.source = source;
   }
 
   /**
    * Single choke point for every HTTP call; records exactly one line per call.
    * @param {string} method
-   * @param {string} pathTemplate e.g. '/api/articles/{id}' (constant, spec key)
+   * @param {string} pathTemplate OpenAPI path key without /api, e.g. '/articles/{id}'
    * @param {{pathParams?:object, params?:object, data?:any, headers?:object}} [opts]
    */
   async send(method, pathTemplate, opts = {}) {
@@ -24,7 +29,11 @@ class BaseClient {
       return encodeURIComponent(String(pathParams[name]));
     });
 
+    // baseURL ends in "/api/": send a RELATIVE path (no leading slash) or "/api" is dropped.
+    const relativePath = actualPath.replace(/^\/+/, '');
+
     const entry = {
+      source: this.source,
       method: method.toUpperCase(),
       pathTemplate,
       actualPath,
@@ -34,7 +43,7 @@ class BaseClient {
     };
 
     try {
-      const response = await this.request.fetch(actualPath, {
+      const response = await this.request.fetch(relativePath, {
         method: entry.method,
         params,
         data,

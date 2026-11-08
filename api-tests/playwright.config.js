@@ -7,5 +7,5 @@ module.exports = defineConfig({
   workers: 1,
   fullyParallel: false,
   reporter: [['list'], ['html', { open: 'never' }]],
-  use: { baseURL: config.GAD_URL },
+  use: { baseURL: config.BASE_URL },
 });

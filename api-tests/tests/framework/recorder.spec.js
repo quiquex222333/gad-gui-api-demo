@@ -32,23 +32,29 @@ test.describe('BaseClient', () => {
       const ok = { fetch: async () => ({ status: () => 200 }) };
       const bad = { fetch: async () => { throw new Error('boom'); } };
 
-      await new BaseClient(ok).send('get', '/api/articles/{id}', {
+      await new BaseClient(ok).send('get', '/articles/{id}', {
         pathParams: { id: 1 },
         params: { b: 1, a: 2 },
         data: { title: 'x', body: 'y' },
       });
-      await expect(new BaseClient(bad).send('GET', '/api/articles')).rejects.toThrow('boom');
+      await expect(new BaseClient(bad).send('GET', '/articles')).rejects.toThrow('boom');
 
       const [first, second] = fs.readFileSync(tmp, 'utf8').trim().split('\n').map((l) => JSON.parse(l));
       expect(first).toEqual({
+        source: 'test',
         method: 'GET',
-        pathTemplate: '/api/articles/{id}',
-        actualPath: '/api/articles/1',
+        pathTemplate: '/articles/{id}',
+        actualPath: '/articles/1',
         status: 200,
         queryParams: ['a', 'b'],
         bodyFields: ['body', 'title'],
       });
       expect(second.status).toBeNull();
+      expect(second.source).toBe('test');
+
+      await new BaseClient(ok, { source: 'setup' }).send('GET', '/restoreTestDB');
+      const last = fs.readFileSync(tmp, 'utf8').trim().split('\n').map((l) => JSON.parse(l)).pop();
+      expect(last.source).toBe('setup');
     } finally {
       delete process.env.COVERAGE_FILE;
     }

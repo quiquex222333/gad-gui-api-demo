@@ -1,6 +1,6 @@
 const BaseClient = require('./base.client');
 
-const PATHS = { list: '/api/articles', item: '/api/articles/{id}' };
+const PATHS = { list: '/articles', item: '/articles/{id}' };
 
 class ArticlesClient extends BaseClient {
   list(params) {

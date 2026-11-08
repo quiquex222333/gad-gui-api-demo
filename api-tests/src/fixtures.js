@@ -5,8 +5,8 @@ const { createClients, LoginClient } = require('./clients');
 const test = base.test.extend({
   authToken: [
     async ({ playwright }, use) => {
-      const ctx = await playwright.request.newContext({ baseURL: config.GAD_URL });
-      const res = await new LoginClient(ctx).login(config.GAD_USER, config.GAD_PASSWORD);
+      const ctx = await playwright.request.newContext({ baseURL: config.BASE_URL });
+      const res = await new LoginClient(ctx, { source: 'setup' }).login(config.GAD_USER, config.GAD_PASSWORD);
       if (res.status() !== 200) {
         throw new Error(`Seed user login failed with status ${res.status()}`);
       }
@@ -23,7 +23,7 @@ const test = base.test.extend({
 
   authApi: async ({ playwright, authToken }, use) => {
     const ctx = await playwright.request.newContext({
-      baseURL: config.GAD_URL,
+      baseURL: config.BASE_URL,
       extraHTTPHeaders: { Authorization: `Bearer ${authToken}` },
     });
     await use(createClients(ctx));

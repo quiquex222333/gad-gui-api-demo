@@ -43,11 +43,14 @@ Snapshot assertions (`toMatchSnapshot`, `toHaveScreenshot`) are banned by the gu
 
 ## 5. Request recorder
 `BaseClient.send()` is the single choke point for HTTP. Each call appends one JSON line to `.coverage/requests.jsonl`
-(`method`, `pathTemplate`, `actualPath`, `status`, `queryParams`, `bodyFields`) — even if the request throws (`status: null`).
+(`source`, `method`, `pathTemplate`, `actualPath`, `status`, `queryParams`, `bodyFields`) — even if the request throws (`status: null`).
+`source` is `"setup"` for globalSetup/fixture calls (restore, token login: construct the client with `{ source: 'setup' }`), `"test"` otherwise.
 This file is how endpoint coverage against `public/tools/schema/openapi_rest_demo.json` is measured.
 - A request that bypasses a client is invisible to coverage. **Every new endpoint must go through a client method.**
-- `pathTemplate` = `/api` + the OpenAPI path key (e.g. `/api/articles/{id}`). Path constants live in the client's `PATHS`.
+- `pathTemplate` = the OpenAPI path key without `/api` (e.g. `/articles/{id}`). Path constants live in the client's `PATHS`.
 - `tests/framework/path-templates.spec.js` verifies each `PATHS` entry exists in the spec; add new clients to its `clients` map.
+
+- `baseURL` = `${GAD_URL ?? 'http://localhost:3005'}/api/`: `BaseClient` sends paths without a leading slash; never call `request.fetch('/...')` yourself.
 
 ## 6. How to add a test for a new endpoint
 1. Find the path/method in `public/tools/schema/openapi_rest_demo.json`.
