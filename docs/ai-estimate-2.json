@@ -1,0 +1,359 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": { "name": "gad-coverage-tool", "version": "estimate-by-reading" },
+  "inputs": {
+    "spec": {
+      "path": "public/tools/schema/openapi_rest_demo.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "openapi": "3.0.1",
+      "infoVersion": "1.3.3",
+      "operationsExcluded": 6
+    },
+    "requests": {
+      "path": "api-tests/.coverage/requests.jsonl",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "lines": { "total": 18, "invalid": 0, "nonTest": 2, "nullStatus": 0, "excluded": 0, "counted": 16, "unmatched": 0 }
+    },
+    "config": {
+      "path": null,
+      "sha256": null,
+      "scope": ["/articles*", "/comments*", "/users*", "/login"],
+      "exclude": ["/restore*", "/debug/*"]
+    }
+  },
+  "summary": {
+    "scope": {
+      "operations": { "covered": 8, "total": 26, "percent": 30.77 },
+      "statuses": { "covered": 12, "total": 81, "percent": 14.81 },
+      "parameters": { "covered": 11, "total": 91, "percent": 12.09 }
+    }
+  },
+  "operations": [
+    {
+      "id": "GET /articles", "method": "GET", "path": "/articles", "inScope": true, "covered": true, "requests": 2,
+      "statuses": [{ "status": 200, "documented": true, "requests": 2 }],
+      "parameters": []
+    },
+    {
+      "id": "POST /articles", "method": "POST", "path": "/articles", "inScope": true, "covered": true, "requests": 2,
+      "statuses": [
+        { "status": 201, "documented": true, "requests": 1 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 1 },
+        { "status": 422, "documented": true, "requests": 0 }
+      ],
+      "parameters": [
+        { "in": "body", "name": "body", "documented": true, "required": true, "requests": 2 },
+        { "in": "body", "name": "date", "documented": true, "required": true, "requests": 2 },
+        { "in": "body", "name": "image", "documented": true, "required": false, "requests": 2 },
+        { "in": "body", "name": "title", "documented": true, "required": true, "requests": 2 }
+      ]
+    },
+    {
+      "id": "GET /articles/search", "method": "GET", "path": "/articles/search", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [{ "status": 200, "documented": true, "requests": 0 }],
+      "parameters": [
+        { "in": "query", "name": "_embed", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_end", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_expand", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_limit", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_order", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_page", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_sort", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_start", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "date", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "id", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "q", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "user_id", "documented": true, "required": false, "requests": 0 }
+      ]
+    },
+    {
+      "id": "GET /articles/{id}", "method": "GET", "path": "/articles/{id}", "inScope": true, "covered": true, "requests": 3,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 3 },
+        { "status": 404, "documented": true, "requests": 0 }
+      ],
+      "parameters": [{ "in": "path", "name": "id", "documented": true, "required": true, "requests": 3 }]
+    },
+    {
+      "id": "PUT /articles/{id}", "method": "PUT", "path": "/articles/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 201, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 },
+        { "status": 422, "documented": true, "requests": 0 }
+      ],
+      "parameters": [
+        { "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "body", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "date", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "image", "documented": true, "required": false, "requests": 0 },
+        { "in": "body", "name": "title", "documented": true, "required": true, "requests": 0 }
+      ]
+    },
+    {
+      "id": "PATCH /articles/{id}", "method": "PATCH", "path": "/articles/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 },
+        { "status": 422, "documented": true, "requests": 0 }
+      ],
+      "parameters": [
+        { "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "body", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "date", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "image", "documented": true, "required": false, "requests": 0 },
+        { "in": "body", "name": "title", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "user_id", "documented": true, "required": true, "requests": 0 }
+      ]
+    },
+    {
+      "id": "DELETE /articles/{id}", "method": "DELETE", "path": "/articles/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 0 }
+      ],
+      "parameters": [{ "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 }]
+    },
+    {
+      "id": "HEAD /articles/{id}", "method": "HEAD", "path": "/articles/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 }
+      ],
+      "parameters": [{ "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 }]
+    },
+    {
+      "id": "GET /comments", "method": "GET", "path": "/comments", "inScope": true, "covered": true, "requests": 1,
+      "statuses": [{ "status": 200, "documented": true, "requests": 1 }],
+      "parameters": []
+    },
+    {
+      "id": "POST /comments", "method": "POST", "path": "/comments", "inScope": true, "covered": true, "requests": 2,
+      "statuses": [
+        { "status": 201, "documented": true, "requests": 1 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 1 },
+        { "status": 422, "documented": true, "requests": 0 }
+      ],
+      "parameters": [
+        { "in": "body", "name": "article_id", "documented": true, "required": true, "requests": 2 },
+        { "in": "body", "name": "body", "documented": true, "required": true, "requests": 2 },
+        { "in": "body", "name": "date", "documented": true, "required": true, "requests": 2 }
+      ]
+    },
+    {
+      "id": "GET /comments/search", "method": "GET", "path": "/comments/search", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [{ "status": 200, "documented": true, "requests": 0 }],
+      "parameters": [
+        { "in": "query", "name": "_end", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_expand", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_limit", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_order", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_page", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_sort", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_start", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "article_id", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "date", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "id", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "q", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "user_id", "documented": true, "required": false, "requests": 0 }
+      ]
+    },
+    {
+      "id": "GET /comments/{id}", "method": "GET", "path": "/comments/{id}", "inScope": true, "covered": true, "requests": 2,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 2 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 }
+      ],
+      "parameters": [{ "in": "path", "name": "id", "documented": true, "required": true, "requests": 2 }]
+    },
+    {
+      "id": "PUT /comments/{id}", "method": "PUT", "path": "/comments/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 201, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 },
+        { "status": 422, "documented": true, "requests": 0 }
+      ],
+      "parameters": [
+        { "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "article_id", "documented": true, "required": false, "requests": 0 },
+        { "in": "body", "name": "body", "documented": true, "required": false, "requests": 0 },
+        { "in": "body", "name": "date", "documented": true, "required": false, "requests": 0 }
+      ]
+    },
+    {
+      "id": "PATCH /comments/{id}", "method": "PATCH", "path": "/comments/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 },
+        { "status": 422, "documented": true, "requests": 0 }
+      ],
+      "parameters": [
+        { "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "article_id", "documented": true, "required": false, "requests": 0 },
+        { "in": "body", "name": "body", "documented": true, "required": false, "requests": 0 },
+        { "in": "body", "name": "date", "documented": true, "required": false, "requests": 0 },
+        { "in": "body", "name": "user_id", "documented": true, "required": false, "requests": 0 }
+      ]
+    },
+    {
+      "id": "DELETE /comments/{id}", "method": "DELETE", "path": "/comments/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 }
+      ],
+      "parameters": [{ "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 }]
+    },
+    {
+      "id": "HEAD /comments/{id}", "method": "HEAD", "path": "/comments/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 }
+      ],
+      "parameters": [{ "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 }]
+    },
+    {
+      "id": "GET /login", "method": "GET", "path": "/login", "inScope": true, "covered": true, "requests": 2,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 1 },
+        { "status": 401, "documented": true, "requests": 1 }
+      ],
+      "parameters": []
+    },
+    {
+      "id": "POST /login", "method": "POST", "path": "/login", "inScope": true, "covered": true, "requests": 2,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 1 },
+        { "status": 401, "documented": true, "requests": 1 }
+      ],
+      "parameters": [
+        { "in": "body", "name": "email", "documented": true, "required": true, "requests": 2 },
+        { "in": "body", "name": "password", "documented": true, "required": true, "requests": 2 }
+      ]
+    },
+    {
+      "id": "GET /users", "method": "GET", "path": "/users", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [{ "status": 200, "documented": true, "requests": 0 }],
+      "parameters": []
+    },
+    {
+      "id": "POST /users", "method": "POST", "path": "/users", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 201, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 409, "documented": true, "requests": 0 },
+        { "status": 422, "documented": true, "requests": 0 }
+      ],
+      "parameters": [
+        { "in": "body", "name": "avatar", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "email", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "firstname", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "lastname", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "password", "documented": true, "required": false, "requests": 0 }
+      ]
+    },
+    {
+      "id": "GET /users/search", "method": "GET", "path": "/users/search", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [{ "status": 200, "documented": true, "requests": 0 }],
+      "parameters": [
+        { "in": "query", "name": "_embed", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_end", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_limit", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_order", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_page", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_sort", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "_start", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "email", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "firstname", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "id", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "lastname", "documented": true, "required": false, "requests": 0 },
+        { "in": "query", "name": "q", "documented": true, "required": false, "requests": 0 }
+      ]
+    },
+    {
+      "id": "GET /users/{id}", "method": "GET", "path": "/users/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 }
+      ],
+      "parameters": [{ "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 }]
+    },
+    {
+      "id": "PUT /users/{id}", "method": "PUT", "path": "/users/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 201, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 },
+        { "status": 422, "documented": true, "requests": 0 }
+      ],
+      "parameters": [
+        { "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "avatar", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "email", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "firstname", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "lastname", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "password", "documented": true, "required": false, "requests": 0 }
+      ]
+    },
+    {
+      "id": "PATCH /users/{id}", "method": "PATCH", "path": "/users/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 },
+        { "status": 422, "documented": true, "requests": 0 }
+      ],
+      "parameters": [
+        { "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "avatar", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "email", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "firstname", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "lastname", "documented": true, "required": true, "requests": 0 },
+        { "in": "body", "name": "password", "documented": true, "required": false, "requests": 0 }
+      ]
+    },
+    {
+      "id": "DELETE /users/{id}", "method": "DELETE", "path": "/users/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 401, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 }
+      ],
+      "parameters": [{ "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 }]
+    },
+    {
+      "id": "HEAD /users/{id}", "method": "HEAD", "path": "/users/{id}", "inScope": true, "covered": false, "requests": 0,
+      "statuses": [
+        { "status": 200, "documented": true, "requests": 0 },
+        { "status": 400, "documented": true, "requests": 0 },
+        { "status": 404, "documented": true, "requests": 0 }
+      ],
+      "parameters": [{ "in": "path", "name": "id", "documented": true, "required": true, "requests": 0 }]
+    }
+  ],
+  "drift": {
+    "unmatchedRequests": [],
+    "undocumentedStatuses": [],
+    "undocumentedParams": []
+  },
+  "warnings": []
+}

@@ -14,6 +14,8 @@
     "p:kill": "pm2 kill",
     "pretty": "npx prettier --write .",
     "eslint": "npx eslint .",
+    "coverage:report": "node coverage-tool/bin/coverage.js report",
+    "coverage:diff": "node coverage-tool/bin/coverage.js diff",
     "start:readonly": "set READ_ONLY=1 && node server.js",
     "start:ssl": "set SSL_ENABLED=1 && node server.js",
     "version:patch": "node tools/release/update-version.js patch",

@@ -1,0 +1,16 @@
+{"source":"setup","method":"GET","pathTemplate":"/restoreTestDB","actualPath":"/restoreTestDB","status":201,"queryParams":[],"bodyFields":[]}
+{"source":"test","method":"GET","pathTemplate":"/articles","actualPath":"/articles","status":200,"queryParams":["_limit","bogus"],"bodyFields":[]}
+{"source":"test","method":"GET","pathTemplate":"/articles/{id}","actualPath":"/articles/search","status":200,"queryParams":["query"],"bodyFields":[]}
+{"source":"test","method":"GET","pathTemplate":"/articles/{id}","actualPath":"/articles/7","status":200,"queryParams":[],"bodyFields":[]}
+{"source":"test","method":"DELETE","pathTemplate":"/articles/{id}","actualPath":"/articles/1","status":404,"queryParams":[],"bodyFields":[]}
+{"source":"test","method":"POST","pathTemplate":"/articles","actualPath":"/articles","status":201,"queryParams":[],"bodyFields":["title"]}
+{"source":"test","method":"GET","pathTemplate":"/surveys/statistics/{type}","actualPath":"/surveys/statistics/description","status":200,"queryParams":[],"bodyFields":[]}
+{"source":"test","method":"PATCH","pathTemplate":"/comments","actualPath":"/comments","status":404,"queryParams":[],"bodyFields":[]}
+{"source":"test","method":"GET","pathTemplate":"/nothing/here","actualPath":"/nothing/here","status":404,"queryParams":[],"bodyFields":[]}
+{not json
+{"source":"test","method":"GET","pathTemplate":"/articles","actualPath":"/articles","status":null,"queryParams":[],"bodyFields":[]}
+{"source":"test","method":"GET","pathTemplate":"/debug/ping","actualPath":"/debug/ping","status":200,"queryParams":[],"bodyFields":[]}
+
+{"source":"test","method":"get","pathTemplate":"/articles","actualPath":"/articles/","status":200,"queryParams":[],"bodyFields":[]}
+{"source":"test","method":"post","pathTemplate":"/articles","actualPath":"/articles/","status":201,"bodyFields":["title","image"]}
+{"method":"GET","actualPath":"/articles","status":200}

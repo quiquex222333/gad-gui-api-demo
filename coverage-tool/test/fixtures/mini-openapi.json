@@ -1,0 +1,60 @@
+{
+  "openapi": "3.0.1",
+  "info": { "title": "mini", "version": "0.0.1" },
+  "paths": {
+    "/articles": {
+      "get": {
+        "parameters": [{ "name": "_limit", "in": "query", "schema": { "type": "integer" } }],
+        "responses": { "200": { "description": "ok" } }
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  { "type": "object", "required": ["title"], "properties": { "title": { "type": "string" }, "body": { "type": "string" } } },
+                  { "$ref": "#/components/schemas/Image" }
+                ]
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "created" }, "422": { "description": "invalid" } }
+      }
+    },
+    "/articles/search": {
+      "get": {
+        "parameters": [
+          { "name": "query", "in": "query", "required": true, "schema": { "type": "string" } },
+          { "name": "X-Trace", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/articles/{id}": {
+      "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }],
+      "get": { "responses": { "200": { "description": "ok" }, "404": { "description": "nf" } } },
+      "delete": { "responses": { "200": { "description": "ok" } } }
+    },
+    "/comments": { "get": { "responses": { "200": { "description": "ok" } } } },
+    "/users": { "get": { "responses": { "200": { "description": "ok" }, "default": { "description": "any" } } } },
+    "/surveys/statistics/{type}": {
+      "get": {
+        "parameters": [{ "name": "type", "in": "path", "required": true, "schema": { "type": "string" } }],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/surveys/{surveyType}/description": {
+      "get": {
+        "parameters": [{ "name": "surveyType", "in": "path", "required": true, "schema": { "type": "string" } }],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/restore": { "get": { "responses": { "201": { "description": "ok" } } } },
+    "/debug/ping": { "get": { "responses": { "200": { "description": "ok" } } } }
+  },
+  "components": {
+    "schemas": { "Image": { "type": "object", "properties": { "image": { "type": "string" } } } }
+  }
+}

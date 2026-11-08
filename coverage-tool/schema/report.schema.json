@@ -1,0 +1,539 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "coverage-tool/report.schema.json",
+  "title": "GAD API coverage report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "tool",
+    "inputs",
+    "summary",
+    "operations",
+    "drift",
+    "warnings"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "const": "gad-coverage-tool"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spec",
+        "requests",
+        "config"
+      ],
+      "properties": {
+        "spec": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "openapi",
+            "infoVersion",
+            "operationsTotal",
+            "operationsExcluded"
+          ],
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "sha256": {
+              "$ref": "#/$defs/sha256"
+            },
+            "openapi": {
+              "type": "string"
+            },
+            "infoVersion": {
+              "type": "string"
+            },
+            "operationsTotal": {
+              "$ref": "#/$defs/count"
+            },
+            "operationsExcluded": {
+              "$ref": "#/$defs/count"
+            }
+          }
+        },
+        "requests": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "lines"
+          ],
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "sha256": {
+              "$ref": "#/$defs/sha256"
+            },
+            "lines": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "total",
+                "invalid",
+                "nonTest",
+                "nullStatus",
+                "excluded",
+                "counted",
+                "unmatched"
+              ],
+              "properties": {
+                "total": {
+                  "$ref": "#/$defs/count"
+                },
+                "invalid": {
+                  "$ref": "#/$defs/count"
+                },
+                "nonTest": {
+                  "$ref": "#/$defs/count"
+                },
+                "nullStatus": {
+                  "$ref": "#/$defs/count"
+                },
+                "excluded": {
+                  "$ref": "#/$defs/count"
+                },
+                "counted": {
+                  "$ref": "#/$defs/count"
+                },
+                "unmatched": {
+                  "$ref": "#/$defs/count"
+                }
+              }
+            }
+          }
+        },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "scope",
+            "exclude"
+          ],
+          "properties": {
+            "path": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "sha256": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/sha256"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "scope": {
+              "$ref": "#/$defs/globs"
+            },
+            "exclude": {
+              "$ref": "#/$defs/globs"
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "global"
+      ],
+      "properties": {
+        "scope": {
+          "$ref": "#/$defs/dimensions"
+        },
+        "global": {
+          "$ref": "#/$defs/dimensions"
+        }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/operation"
+      }
+    },
+    "drift": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unmatchedRequests",
+        "undocumentedStatuses",
+        "undocumentedParams"
+      ],
+      "properties": {
+        "unmatchedRequests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/unmatched"
+          }
+        },
+        "undocumentedStatuses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/driftStatus"
+          }
+        },
+        "undocumentedParams": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/driftParam"
+          }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/warning"
+      }
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "globs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "method": {
+      "enum": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "HEAD",
+        "OPTIONS",
+        "TRACE"
+      ]
+    },
+    "status": {
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 599
+    },
+    "paramIn": {
+      "enum": [
+        "path",
+        "query",
+        "body"
+      ]
+    },
+    "metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "covered",
+        "total",
+        "percent"
+      ],
+      "properties": {
+        "covered": {
+          "$ref": "#/$defs/count"
+        },
+        "total": {
+          "$ref": "#/$defs/count"
+        },
+        "percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operations",
+        "statuses",
+        "parameters"
+      ],
+      "properties": {
+        "operations": {
+          "$ref": "#/$defs/metric"
+        },
+        "statuses": {
+          "$ref": "#/$defs/metric"
+        },
+        "parameters": {
+          "$ref": "#/$defs/metric"
+        }
+      }
+    },
+    "operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "method",
+        "path",
+        "inScope",
+        "covered",
+        "requests",
+        "statuses",
+        "parameters"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/$defs/method"
+        },
+        "path": {
+          "type": "string"
+        },
+        "inScope": {
+          "type": "boolean"
+        },
+        "covered": {
+          "type": "boolean"
+        },
+        "requests": {
+          "$ref": "#/$defs/count"
+        },
+        "statuses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "documented",
+              "requests"
+            ],
+            "properties": {
+              "status": {
+                "$ref": "#/$defs/status"
+              },
+              "documented": {
+                "type": "boolean"
+              },
+              "requests": {
+                "$ref": "#/$defs/count"
+              }
+            }
+          }
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "in",
+              "name",
+              "documented",
+              "required",
+              "requests"
+            ],
+            "properties": {
+              "in": {
+                "$ref": "#/$defs/paramIn"
+              },
+              "name": {
+                "type": "string"
+              },
+              "documented": {
+                "type": "boolean"
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "requests": {
+                "$ref": "#/$defs/count"
+              }
+            }
+          }
+        }
+      }
+    },
+    "unmatched": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "actualPath",
+        "reason",
+        "matchedPath",
+        "inScope",
+        "requests",
+        "statuses"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "actualPath": {
+          "type": "string"
+        },
+        "reason": {
+          "enum": [
+            "no-path",
+            "no-method"
+          ]
+        },
+        "matchedPath": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "inScope": {
+          "type": "boolean"
+        },
+        "requests": {
+          "$ref": "#/$defs/count"
+        },
+        "statuses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/status"
+          }
+        }
+      }
+    },
+    "driftStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "method",
+        "path",
+        "status",
+        "inScope",
+        "requests"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/$defs/method"
+        },
+        "path": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "inScope": {
+          "type": "boolean"
+        },
+        "requests": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "driftParam": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "method",
+        "path",
+        "in",
+        "param",
+        "inScope",
+        "requests"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/$defs/method"
+        },
+        "path": {
+          "type": "string"
+        },
+        "in": {
+          "enum": [
+            "query",
+            "body"
+          ]
+        },
+        "param": {
+          "type": "string"
+        },
+        "inScope": {
+          "type": "boolean"
+        },
+        "requests": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "warning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message",
+        "count"
+      ],
+      "properties": {
+        "code": {
+          "enum": [
+            "PATH_TEMPLATE_MISMATCH",
+            "AMBIGUOUS_TEMPLATE",
+            "NON_NUMERIC_RESPONSE_KEY",
+            "INVALID_LINE"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}
