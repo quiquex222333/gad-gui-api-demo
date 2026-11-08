@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "1.0.0",
+  "base": {
+    "path": "docs/ai-estimate-1.json",
+    "sha256": "6d977b1cd0d5e9be33caa32536a7c80d99e593ec9cfd119ce699b7ff924a0005"
+  },
+  "head": {
+    "path": "docs/ai-estimate-2.json",
+    "sha256": "55dac1ec981f4843e777020795ba88c8ab7ba21d1596e3474b8d322c435d40d5"
+  },
+  "summary": {
+    "scope": {
+      "operations": {
+        "base": {
+          "covered": 8,
+          "total": 26,
+          "percent": 30.77
+        },
+        "head": {
+          "covered": 8,
+          "total": 26,
+          "percent": 30.77
+        },
+        "deltaCovered": 0,
+        "deltaTotal": 0,
+        "deltaPercent": 0
+      },
+      "statuses": {
+        "base": {
+          "covered": 12,
+          "total": 81,
+          "percent": 14.81
+        },
+        "head": {
+          "covered": 12,
+          "total": 81,
+          "percent": 14.81
+        },
+        "deltaCovered": 0,
+        "deltaTotal": 0,
+        "deltaPercent": 0
+      },
+      "parameters": {
+        "base": {
+          "covered": 11,
+          "total": 91,
+          "percent": 12.09
+        },
+        "head": {
+          "covered": 11,
+          "total": 91,
+          "percent": 12.09
+        },
+        "deltaCovered": 0,
+        "deltaTotal": 0,
+        "deltaPercent": 0
+      }
+    },
+    "global": {
+      "operations": {
+        "base": {
+          "covered": null,
+          "total": null,
+          "percent": null
+        },
+        "head": {
+          "covered": null,
+          "total": null,
+          "percent": null
+        },
+        "deltaCovered": null,
+        "deltaTotal": null,
+        "deltaPercent": null
+      },
+      "statuses": {
+        "base": {
+          "covered": null,
+          "total": null,
+          "percent": null
+        },
+        "head": {
+          "covered": null,
+          "total": null,
+          "percent": null
+        },
+        "deltaCovered": null,
+        "deltaTotal": null,
+        "deltaPercent": null
+      },
+      "parameters": {
+        "base": {
+          "covered": null,
+          "total": null,
+          "percent": null
+        },
+        "head": {
+          "covered": null,
+          "total": null,
+          "percent": null
+        },
+        "deltaCovered": null,
+        "deltaTotal": null,
+        "deltaPercent": null
+      }
+    }
+  },
+  "gaps": {
+    "closed": [],
+    "opened": [],
+    "added": [],
+    "removed": []
+  },
+  "drift": {
+    "added": [],
+    "removed": []
+  }
+}

@@ -1,0 +1,6143 @@
+[
+  {
+    "id": "GET /about",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/about"
+  },
+  {
+    "id": "GET /about#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/about",
+    "status": 200
+  },
+  {
+    "id": "PATCH /api/books/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/api/books/{id}"
+  },
+  {
+    "id": "PATCH /api/books/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/api/books/{id}",
+    "status": 200
+  },
+  {
+    "id": "PATCH /api/books/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/api/books/{id}",
+    "status": 401
+  },
+  {
+    "id": "PATCH /api/books/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/api/books/{id}",
+    "status": 404
+  },
+  {
+    "id": "PATCH /api/books/{id}#500",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/api/books/{id}",
+    "status": 500
+  },
+  {
+    "id": "PATCH /api/books/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/api/books/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /api/books/{id}?body.active",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/api/books/{id}",
+    "in": "body",
+    "param": "active"
+  },
+  {
+    "id": "PATCH /api/books/{id}?body.description",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/api/books/{id}",
+    "in": "body",
+    "param": "description"
+  },
+  {
+    "id": "PATCH /api/books/{id}?body.title",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/api/books/{id}",
+    "in": "body",
+    "param": "title"
+  },
+  {
+    "id": "GET /article-labels/articles/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/article-labels/articles/{id}"
+  },
+  {
+    "id": "GET /article-labels/articles/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/article-labels/articles/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /article-labels/articles/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/article-labels/articles/{id}",
+    "status": 404
+  },
+  {
+    "id": "GET /article-labels/articles/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/article-labels/articles/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}"
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}",
+    "status": 200
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}#201",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}",
+    "status": 201
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}#400",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}",
+    "status": 400
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}",
+    "status": 404
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}#422",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}",
+    "status": 422
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}?body.article_id",
+    "type": "param",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}",
+    "in": "body",
+    "param": "article_id"
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}?body.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}",
+    "in": "body",
+    "param": "id"
+  },
+  {
+    "id": "PUT /article-labels/articles/{id}?body.label_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/article-labels/articles/{id}",
+    "in": "body",
+    "param": "label_ids"
+  },
+  {
+    "id": "POST /articles#400",
+    "type": "status",
+    "inScope": true,
+    "method": "POST",
+    "path": "/articles",
+    "status": 400
+  },
+  {
+    "id": "POST /articles#422",
+    "type": "status",
+    "inScope": true,
+    "method": "POST",
+    "path": "/articles",
+    "status": 422
+  },
+  {
+    "id": "GET /articles/search",
+    "type": "operation",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search"
+  },
+  {
+    "id": "GET /articles/search#200",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "status": 200
+  },
+  {
+    "id": "GET /articles/search?query._embed",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "_embed"
+  },
+  {
+    "id": "GET /articles/search?query._end",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "_end"
+  },
+  {
+    "id": "GET /articles/search?query._expand",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "_expand"
+  },
+  {
+    "id": "GET /articles/search?query._limit",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "_limit"
+  },
+  {
+    "id": "GET /articles/search?query._order",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "_order"
+  },
+  {
+    "id": "GET /articles/search?query._page",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "_page"
+  },
+  {
+    "id": "GET /articles/search?query._sort",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "_sort"
+  },
+  {
+    "id": "GET /articles/search?query._start",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "_start"
+  },
+  {
+    "id": "GET /articles/search?query.date",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "date"
+  },
+  {
+    "id": "GET /articles/search?query.id",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "id"
+  },
+  {
+    "id": "GET /articles/search?query.q",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "q"
+  },
+  {
+    "id": "GET /articles/search?query.user_id",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/search",
+    "in": "query",
+    "param": "user_id"
+  },
+  {
+    "id": "GET /articles/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/{id}",
+    "status": 404
+  },
+  {
+    "id": "PUT /articles/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}"
+  },
+  {
+    "id": "PUT /articles/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "status": 200
+  },
+  {
+    "id": "PUT /articles/{id}#201",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "status": 201
+  },
+  {
+    "id": "PUT /articles/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "status": 400
+  },
+  {
+    "id": "PUT /articles/{id}#401",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "status": 401
+  },
+  {
+    "id": "PUT /articles/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "status": 404
+  },
+  {
+    "id": "PUT /articles/{id}#422",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "status": 422
+  },
+  {
+    "id": "PUT /articles/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PUT /articles/{id}?body.body",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "in": "body",
+    "param": "body"
+  },
+  {
+    "id": "PUT /articles/{id}?body.date",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "in": "body",
+    "param": "date"
+  },
+  {
+    "id": "PUT /articles/{id}?body.image",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "in": "body",
+    "param": "image"
+  },
+  {
+    "id": "PUT /articles/{id}?body.title",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/articles/{id}",
+    "in": "body",
+    "param": "title"
+  },
+  {
+    "id": "PATCH /articles/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}"
+  },
+  {
+    "id": "PATCH /articles/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "status": 200
+  },
+  {
+    "id": "PATCH /articles/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "status": 400
+  },
+  {
+    "id": "PATCH /articles/{id}#401",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "status": 401
+  },
+  {
+    "id": "PATCH /articles/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "status": 404
+  },
+  {
+    "id": "PATCH /articles/{id}#422",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "status": 422
+  },
+  {
+    "id": "PATCH /articles/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /articles/{id}?body.body",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "in": "body",
+    "param": "body"
+  },
+  {
+    "id": "PATCH /articles/{id}?body.date",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "in": "body",
+    "param": "date"
+  },
+  {
+    "id": "PATCH /articles/{id}?body.image",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "in": "body",
+    "param": "image"
+  },
+  {
+    "id": "PATCH /articles/{id}?body.title",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "in": "body",
+    "param": "title"
+  },
+  {
+    "id": "PATCH /articles/{id}?body.user_id",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/articles/{id}",
+    "in": "body",
+    "param": "user_id"
+  },
+  {
+    "id": "DELETE /articles/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/articles/{id}"
+  },
+  {
+    "id": "DELETE /articles/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/articles/{id}",
+    "status": 200
+  },
+  {
+    "id": "DELETE /articles/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/articles/{id}",
+    "status": 400
+  },
+  {
+    "id": "DELETE /articles/{id}#401",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/articles/{id}",
+    "status": 401
+  },
+  {
+    "id": "DELETE /articles/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/articles/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "HEAD /articles/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/articles/{id}"
+  },
+  {
+    "id": "HEAD /articles/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/articles/{id}",
+    "status": 200
+  },
+  {
+    "id": "HEAD /articles/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/articles/{id}",
+    "status": 400
+  },
+  {
+    "id": "HEAD /articles/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/articles/{id}",
+    "status": 404
+  },
+  {
+    "id": "HEAD /articles/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/articles/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /book-authors",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-authors"
+  },
+  {
+    "id": "GET /book-authors#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-authors",
+    "status": 200
+  },
+  {
+    "id": "GET /book-authors#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-authors",
+    "status": 404
+  },
+  {
+    "id": "GET /book-genres",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-genres"
+  },
+  {
+    "id": "GET /book-genres#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-genres",
+    "status": 200
+  },
+  {
+    "id": "GET /book-genres#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-genres",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-account-payment-cards",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-account-payment-cards"
+  },
+  {
+    "id": "GET /book-shop-account-payment-cards#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-account-payment-cards",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-account-payment-cards#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-account-payment-cards",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-account-payment-cards#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-account-payment-cards",
+    "status": 404
+  },
+  {
+    "id": "PUT /book-shop-account-payment-cards",
+    "type": "operation",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/book-shop-account-payment-cards"
+  },
+  {
+    "id": "PUT /book-shop-account-payment-cards#200",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/book-shop-account-payment-cards",
+    "status": 200
+  },
+  {
+    "id": "PUT /book-shop-account-payment-cards#401",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/book-shop-account-payment-cards",
+    "status": 401
+  },
+  {
+    "id": "PUT /book-shop-account-payment-cards#422",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/book-shop-account-payment-cards",
+    "status": 422
+  },
+  {
+    "id": "PUT /book-shop-account-payment-cards?body.card_number",
+    "type": "param",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/book-shop-account-payment-cards",
+    "in": "body",
+    "param": "card_number"
+  },
+  {
+    "id": "PUT /book-shop-account-payment-cards?body.cvv",
+    "type": "param",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/book-shop-account-payment-cards",
+    "in": "body",
+    "param": "cvv"
+  },
+  {
+    "id": "PUT /book-shop-account-payment-cards?body.expiry_date",
+    "type": "param",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/book-shop-account-payment-cards",
+    "in": "body",
+    "param": "expiry_date"
+  },
+  {
+    "id": "DELETE /book-shop-account-payment-cards",
+    "type": "operation",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-account-payment-cards"
+  },
+  {
+    "id": "DELETE /book-shop-account-payment-cards#200",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-account-payment-cards",
+    "status": 200
+  },
+  {
+    "id": "DELETE /book-shop-account-payment-cards#401",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-account-payment-cards",
+    "status": 401
+  },
+  {
+    "id": "DELETE /book-shop-account-payment-cards#404",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-account-payment-cards",
+    "status": 404
+  },
+  {
+    "id": "POST /book-shop-account-payment-cards/topup",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-account-payment-cards/topup"
+  },
+  {
+    "id": "POST /book-shop-account-payment-cards/topup#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-account-payment-cards/topup",
+    "status": 200
+  },
+  {
+    "id": "POST /book-shop-account-payment-cards/topup#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-account-payment-cards/topup",
+    "status": 401
+  },
+  {
+    "id": "POST /book-shop-account-payment-cards/topup#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-account-payment-cards/topup",
+    "status": 422
+  },
+  {
+    "id": "POST /book-shop-account-payment-cards/topup?body.amount",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-account-payment-cards/topup",
+    "in": "body",
+    "param": "amount"
+  },
+  {
+    "id": "POST /book-shop-account-payment-cards/topup?body.card_number",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-account-payment-cards/topup",
+    "in": "body",
+    "param": "card_number"
+  },
+  {
+    "id": "GET /book-shop-accounts",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts"
+  },
+  {
+    "id": "GET /book-shop-accounts#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-accounts#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-accounts#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts",
+    "status": 404
+  },
+  {
+    "id": "POST /book-shop-accounts",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts"
+  },
+  {
+    "id": "POST /book-shop-accounts#201",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "status": 201
+  },
+  {
+    "id": "POST /book-shop-accounts#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "status": 401
+  },
+  {
+    "id": "POST /book-shop-accounts#409",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "status": 409
+  },
+  {
+    "id": "POST /book-shop-accounts?body.city",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "city"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.country",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "country"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.created_at",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "created_at"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.favorite_books_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "favorite_books_ids"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.funds",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "funds"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "id"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.owned_books_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "owned_books_ids"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.postal_code",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "postal_code"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.purchased_book_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "purchased_book_ids"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.read_books_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "read_books_ids"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.role_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "role_id"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.street",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "street"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.user_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "user_id"
+  },
+  {
+    "id": "POST /book-shop-accounts?body.wishlist_books_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts",
+    "in": "body",
+    "param": "wishlist_books_ids"
+  },
+  {
+    "id": "POST /book-shop-accounts/files",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts/files"
+  },
+  {
+    "id": "POST /book-shop-accounts/files#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts/files",
+    "status": 200
+  },
+  {
+    "id": "POST /book-shop-accounts/files#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts/files",
+    "status": 401
+  },
+  {
+    "id": "POST /book-shop-accounts/files?body.files",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-accounts/files",
+    "in": "body",
+    "param": "files"
+  },
+  {
+    "id": "GET /book-shop-accounts/my-books",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts/my-books"
+  },
+  {
+    "id": "GET /book-shop-accounts/my-books#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts/my-books",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-accounts/my-books#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts/my-books",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-accounts/my-books#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts/my-books",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-accounts/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts/{id}"
+  },
+  {
+    "id": "GET /book-shop-accounts/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-accounts/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts/{id}",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-accounts/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts/{id}",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-accounts/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-accounts/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "status": 200
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "status": 401
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}#403",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "status": 403
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "status": 404
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.city",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "city"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.country",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "country"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.created_at",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "created_at"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.favorite_books_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "favorite_books_ids"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.funds",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "funds"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.owned_books_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "owned_books_ids"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.postal_code",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "postal_code"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.purchased_book_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "purchased_book_ids"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.read_books_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "read_books_ids"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.role_id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "role_id"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.street",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "street"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.user_id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "user_id"
+  },
+  {
+    "id": "PATCH /book-shop-accounts/{id}?body.wishlist_books_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-accounts/{id}",
+    "in": "body",
+    "param": "wishlist_books_ids"
+  },
+  {
+    "id": "POST /book-shop-authorize",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-authorize"
+  },
+  {
+    "id": "POST /book-shop-authorize#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-authorize",
+    "status": 200
+  },
+  {
+    "id": "POST /book-shop-authorize#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-authorize",
+    "status": 401
+  },
+  {
+    "id": "POST /book-shop-authorize#403",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-authorize",
+    "status": 403
+  },
+  {
+    "id": "POST /book-shop-authorize#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-authorize",
+    "status": 404
+  },
+  {
+    "id": "POST /book-shop-authorize?body.role_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-authorize",
+    "in": "body",
+    "param": "role_ids"
+  },
+  {
+    "id": "GET /book-shop-book-reviews",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-book-reviews"
+  },
+  {
+    "id": "GET /book-shop-book-reviews#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-book-reviews",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-book-reviews?query.book_id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-book-reviews",
+    "in": "query",
+    "param": "book_id"
+  },
+  {
+    "id": "GET /book-shop-book-reviews?query.book_ids",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-book-reviews",
+    "in": "query",
+    "param": "book_ids"
+  },
+  {
+    "id": "GET /book-shop-book-reviews?query.mean",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-book-reviews",
+    "in": "query",
+    "param": "mean"
+  },
+  {
+    "id": "GET /book-shop-items",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-items"
+  },
+  {
+    "id": "GET /book-shop-items#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-items",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-items#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-items",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-items#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-items",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-manage/books-without-items",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/books-without-items"
+  },
+  {
+    "id": "GET /book-shop-manage/books-without-items#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/books-without-items",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-manage/books-without-items#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/books-without-items",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-manage/items",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/items"
+  },
+  {
+    "id": "GET /book-shop-manage/items#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/items",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-manage/items#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/items",
+    "status": 401
+  },
+  {
+    "id": "POST /book-shop-manage/items",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items"
+  },
+  {
+    "id": "POST /book-shop-manage/items#201",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items",
+    "status": 201
+  },
+  {
+    "id": "POST /book-shop-manage/items#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items",
+    "status": 401
+  },
+  {
+    "id": "POST /book-shop-manage/items#409",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items",
+    "status": 409
+  },
+  {
+    "id": "POST /book-shop-manage/items#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items",
+    "status": 422
+  },
+  {
+    "id": "POST /book-shop-manage/items?body.book_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items",
+    "in": "body",
+    "param": "book_id"
+  },
+  {
+    "id": "POST /book-shop-manage/items?body.created_at",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items",
+    "in": "body",
+    "param": "created_at"
+  },
+  {
+    "id": "POST /book-shop-manage/items?body.id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items",
+    "in": "body",
+    "param": "id"
+  },
+  {
+    "id": "POST /book-shop-manage/items?body.price",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items",
+    "in": "body",
+    "param": "price"
+  },
+  {
+    "id": "POST /book-shop-manage/items?body.quantity",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-manage/items",
+    "in": "body",
+    "param": "quantity"
+  },
+  {
+    "id": "GET /book-shop-manage/items/by-book/{bookId}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/items/by-book/{bookId}"
+  },
+  {
+    "id": "GET /book-shop-manage/items/by-book/{bookId}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/items/by-book/{bookId}",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-manage/items/by-book/{bookId}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/items/by-book/{bookId}",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-manage/items/by-book/{bookId}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/items/by-book/{bookId}",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-manage/items/by-book/{bookId}?path.bookId",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/items/by-book/{bookId}",
+    "in": "path",
+    "param": "bookId"
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}"
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "status": 200
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "status": 401
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "status": 404
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}#422",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "status": 422
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}?body.book_id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "in": "body",
+    "param": "book_id"
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}?body.created_at",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "in": "body",
+    "param": "created_at"
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}?body.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "in": "body",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}?body.price",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "in": "body",
+    "param": "price"
+  },
+  {
+    "id": "PATCH /book-shop-manage/items/{id}?body.quantity",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/items/{id}",
+    "in": "body",
+    "param": "quantity"
+  },
+  {
+    "id": "DELETE /book-shop-manage/items/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-manage/items/{id}"
+  },
+  {
+    "id": "DELETE /book-shop-manage/items/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-manage/items/{id}",
+    "status": 200
+  },
+  {
+    "id": "DELETE /book-shop-manage/items/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-manage/items/{id}",
+    "status": 401
+  },
+  {
+    "id": "DELETE /book-shop-manage/items/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-manage/items/{id}",
+    "status": 404
+  },
+  {
+    "id": "DELETE /book-shop-manage/items/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-manage/items/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /book-shop-manage/orders",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/orders"
+  },
+  {
+    "id": "GET /book-shop-manage/orders#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/orders",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-manage/orders#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/orders",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-manage/orders#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/orders",
+    "status": 404
+  },
+  {
+    "id": "PATCH /book-shop-manage/orders/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/orders/{id}"
+  },
+  {
+    "id": "PATCH /book-shop-manage/orders/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/orders/{id}",
+    "status": 200
+  },
+  {
+    "id": "PATCH /book-shop-manage/orders/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/orders/{id}",
+    "status": 401
+  },
+  {
+    "id": "PATCH /book-shop-manage/orders/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/orders/{id}",
+    "status": 404
+  },
+  {
+    "id": "PATCH /book-shop-manage/orders/{id}#409",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/orders/{id}",
+    "status": 409
+  },
+  {
+    "id": "PATCH /book-shop-manage/orders/{id}#422",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/orders/{id}",
+    "status": 422
+  },
+  {
+    "id": "PATCH /book-shop-manage/orders/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/orders/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /book-shop-manage/orders/{id}?body.status_id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-manage/orders/{id}",
+    "in": "body",
+    "param": "status_id"
+  },
+  {
+    "id": "GET /book-shop-manage/team",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/team"
+  },
+  {
+    "id": "GET /book-shop-manage/team#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/team",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-manage/team#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/team",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-manage/users",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/users"
+  },
+  {
+    "id": "GET /book-shop-manage/users#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/users",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-manage/users#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/users",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-manage/users#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/users",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-manage/users?query.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-manage/users",
+    "in": "query",
+    "param": "id"
+  },
+  {
+    "id": "POST /book-shop-order-items",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-order-items"
+  },
+  {
+    "id": "POST /book-shop-order-items#201",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-order-items",
+    "status": 201
+  },
+  {
+    "id": "POST /book-shop-order-items#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-order-items",
+    "status": 404
+  },
+  {
+    "id": "POST /book-shop-order-items#409",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-order-items",
+    "status": 409
+  },
+  {
+    "id": "POST /book-shop-order-items?body.book_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-order-items",
+    "in": "body",
+    "param": "book_id"
+  },
+  {
+    "id": "DELETE /book-shop-order-items",
+    "type": "operation",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-order-items"
+  },
+  {
+    "id": "DELETE /book-shop-order-items#200",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-order-items",
+    "status": 200
+  },
+  {
+    "id": "DELETE /book-shop-order-items#404",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-order-items",
+    "status": 404
+  },
+  {
+    "id": "DELETE /book-shop-order-items?body.book_id",
+    "type": "param",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-order-items",
+    "in": "body",
+    "param": "book_id"
+  },
+  {
+    "id": "GET /book-shop-order-statuses",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-order-statuses"
+  },
+  {
+    "id": "GET /book-shop-order-statuses#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-order-statuses",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-order-statuses#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-order-statuses",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-orders",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-orders"
+  },
+  {
+    "id": "GET /book-shop-orders#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-orders",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-orders#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-orders",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-orders#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-orders",
+    "status": 404
+  },
+  {
+    "id": "POST /book-shop-orders",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders"
+  },
+  {
+    "id": "POST /book-shop-orders#201",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders",
+    "status": 201
+  },
+  {
+    "id": "POST /book-shop-orders#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders",
+    "status": 401
+  },
+  {
+    "id": "POST /book-shop-orders#409",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders",
+    "status": 409
+  },
+  {
+    "id": "POST /book-shop-orders/coupon",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/coupon"
+  },
+  {
+    "id": "POST /book-shop-orders/coupon#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/coupon",
+    "status": 200
+  },
+  {
+    "id": "POST /book-shop-orders/coupon#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/coupon",
+    "status": 401
+  },
+  {
+    "id": "POST /book-shop-orders/coupon#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/coupon",
+    "status": 404
+  },
+  {
+    "id": "POST /book-shop-orders/coupon#409",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/coupon",
+    "status": 409
+  },
+  {
+    "id": "POST /book-shop-orders/coupon?body.coupon_code",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/coupon",
+    "in": "body",
+    "param": "coupon_code"
+  },
+  {
+    "id": "POST /book-shop-orders/coupon?body.order_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/coupon",
+    "in": "body",
+    "param": "order_id"
+  },
+  {
+    "id": "POST /book-shop-orders/items",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/items"
+  },
+  {
+    "id": "POST /book-shop-orders/items#201",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/items",
+    "status": 201
+  },
+  {
+    "id": "POST /book-shop-orders/items#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/items",
+    "status": 401
+  },
+  {
+    "id": "POST /book-shop-orders/items#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/items",
+    "status": 404
+  },
+  {
+    "id": "POST /book-shop-orders/items#409",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/items",
+    "status": 409
+  },
+  {
+    "id": "POST /book-shop-orders/items?body.book_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/book-shop-orders/items",
+    "in": "body",
+    "param": "book_id"
+  },
+  {
+    "id": "DELETE /book-shop-orders/items",
+    "type": "operation",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-orders/items"
+  },
+  {
+    "id": "DELETE /book-shop-orders/items#200",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-orders/items",
+    "status": 200
+  },
+  {
+    "id": "DELETE /book-shop-orders/items#401",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-orders/items",
+    "status": 401
+  },
+  {
+    "id": "DELETE /book-shop-orders/items#404",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/book-shop-orders/items",
+    "status": 404
+  },
+  {
+    "id": "PATCH /book-shop-orders/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-orders/{id}"
+  },
+  {
+    "id": "PATCH /book-shop-orders/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-orders/{id}",
+    "status": 200
+  },
+  {
+    "id": "PATCH /book-shop-orders/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-orders/{id}",
+    "status": 401
+  },
+  {
+    "id": "PATCH /book-shop-orders/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-orders/{id}",
+    "status": 404
+  },
+  {
+    "id": "PATCH /book-shop-orders/{id}#409",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-orders/{id}",
+    "status": 409
+  },
+  {
+    "id": "PATCH /book-shop-orders/{id}#422",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-orders/{id}",
+    "status": 422
+  },
+  {
+    "id": "PATCH /book-shop-orders/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-orders/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /book-shop-orders/{id}?body.status_id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/book-shop-orders/{id}",
+    "in": "body",
+    "param": "status_id"
+  },
+  {
+    "id": "GET /book-shop-roles",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-roles"
+  },
+  {
+    "id": "GET /book-shop-roles#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-roles",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-roles#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-roles",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-stats/all",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/all"
+  },
+  {
+    "id": "GET /book-shop-stats/all#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/all",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-stats/all#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/all",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-stats/all#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/all",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-stats/orders",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/orders"
+  },
+  {
+    "id": "GET /book-shop-stats/orders#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/orders",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-stats/orders#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/orders",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-stats/orders#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/orders",
+    "status": 404
+  },
+  {
+    "id": "GET /book-shop-stats/users",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/users"
+  },
+  {
+    "id": "GET /book-shop-stats/users#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/users",
+    "status": 200
+  },
+  {
+    "id": "GET /book-shop-stats/users#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/users",
+    "status": 401
+  },
+  {
+    "id": "GET /book-shop-stats/users#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/book-shop-stats/users",
+    "status": 404
+  },
+  {
+    "id": "GET /bookmarks/articles",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/bookmarks/articles"
+  },
+  {
+    "id": "GET /bookmarks/articles#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/bookmarks/articles",
+    "status": 200
+  },
+  {
+    "id": "GET /bookmarks/articles#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/bookmarks/articles",
+    "status": 401
+  },
+  {
+    "id": "POST /bookmarks/articles",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/bookmarks/articles"
+  },
+  {
+    "id": "POST /bookmarks/articles#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/bookmarks/articles",
+    "status": 200
+  },
+  {
+    "id": "POST /bookmarks/articles#201",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/bookmarks/articles",
+    "status": 201
+  },
+  {
+    "id": "POST /bookmarks/articles#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/bookmarks/articles",
+    "status": 401
+  },
+  {
+    "id": "POST /bookmarks/articles?body.article_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/bookmarks/articles",
+    "in": "body",
+    "param": "article_id"
+  },
+  {
+    "id": "GET /books",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/books"
+  },
+  {
+    "id": "GET /books#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/books",
+    "status": 200
+  },
+  {
+    "id": "GET /books#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/books",
+    "status": 404
+  },
+  {
+    "id": "POST /books/favorites/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/favorites/{id}"
+  },
+  {
+    "id": "POST /books/favorites/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/favorites/{id}",
+    "status": 200
+  },
+  {
+    "id": "POST /books/favorites/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/favorites/{id}",
+    "status": 401
+  },
+  {
+    "id": "POST /books/favorites/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/favorites/{id}",
+    "status": 404
+  },
+  {
+    "id": "POST /books/favorites/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/favorites/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "POST /books/owned/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/owned/{id}"
+  },
+  {
+    "id": "POST /books/owned/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/owned/{id}",
+    "status": 200
+  },
+  {
+    "id": "POST /books/owned/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/owned/{id}",
+    "status": 401
+  },
+  {
+    "id": "POST /books/owned/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/owned/{id}",
+    "status": 404
+  },
+  {
+    "id": "POST /books/owned/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/owned/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "POST /books/read/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/read/{id}"
+  },
+  {
+    "id": "POST /books/read/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/read/{id}",
+    "status": 200
+  },
+  {
+    "id": "POST /books/read/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/read/{id}",
+    "status": 401
+  },
+  {
+    "id": "POST /books/read/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/read/{id}",
+    "status": 404
+  },
+  {
+    "id": "POST /books/read/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/read/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "POST /books/wishlist/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/wishlist/{id}"
+  },
+  {
+    "id": "POST /books/wishlist/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/wishlist/{id}",
+    "status": 200
+  },
+  {
+    "id": "POST /books/wishlist/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/wishlist/{id}",
+    "status": 401
+  },
+  {
+    "id": "POST /books/wishlist/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/wishlist/{id}",
+    "status": 404
+  },
+  {
+    "id": "POST /books/wishlist/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/books/wishlist/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "POST /calc/roi",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi"
+  },
+  {
+    "id": "POST /calc/roi#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "status": 200
+  },
+  {
+    "id": "POST /calc/roi?body.additionalMaintenanceHours",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "additionalMaintenanceHours"
+  },
+  {
+    "id": "POST /calc/roi?body.automationCreationHours",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "automationCreationHours"
+  },
+  {
+    "id": "POST /calc/roi?body.automationExecutionHours",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "automationExecutionHours"
+  },
+  {
+    "id": "POST /calc/roi?body.automationNotApplicable",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "automationNotApplicable"
+  },
+  {
+    "id": "POST /calc/roi?body.averageEffortOnModificationOfAutomatedTC",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "averageEffortOnModificationOfAutomatedTC"
+  },
+  {
+    "id": "POST /calc/roi?body.averageEffortOnModificationOfManualTC",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "averageEffortOnModificationOfManualTC"
+  },
+  {
+    "id": "POST /calc/roi?body.baseTestCases",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "baseTestCases"
+  },
+  {
+    "id": "POST /calc/roi?body.hourlyCost",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "hourlyCost"
+  },
+  {
+    "id": "POST /calc/roi?body.manualCreationHours",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "manualCreationHours"
+  },
+  {
+    "id": "POST /calc/roi?body.manualExecutionHours",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "manualExecutionHours"
+  },
+  {
+    "id": "POST /calc/roi?body.modifiedTestsPerRelease",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "modifiedTestsPerRelease"
+  },
+  {
+    "id": "POST /calc/roi?body.newTestsPerRelease",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "newTestsPerRelease"
+  },
+  {
+    "id": "POST /calc/roi?body.numberOfAutomationOfBaseTestCases",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "numberOfAutomationOfBaseTestCases"
+  },
+  {
+    "id": "POST /calc/roi?body.numberOfEnvs",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "numberOfEnvs"
+  },
+  {
+    "id": "POST /calc/roi?body.numberOfSprints",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "numberOfSprints"
+  },
+  {
+    "id": "POST /calc/roi?body.removedTestsPerRelease",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "removedTestsPerRelease"
+  },
+  {
+    "id": "POST /calc/roi?body.startingTestCases",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/roi",
+    "in": "body",
+    "param": "startingTestCases"
+  },
+  {
+    "id": "POST /calc/simpleroi",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/simpleroi"
+  },
+  {
+    "id": "POST /calc/simpleroi#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/simpleroi",
+    "status": 200
+  },
+  {
+    "id": "POST /calc/simpleroi?body.benefitPerSprint",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/simpleroi",
+    "in": "body",
+    "param": "benefitPerSprint"
+  },
+  {
+    "id": "POST /calc/simpleroi?body.costPerSprint",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/simpleroi",
+    "in": "body",
+    "param": "costPerSprint"
+  },
+  {
+    "id": "POST /calc/simpleroi?body.numberOfSprints",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/calc/simpleroi",
+    "in": "body",
+    "param": "numberOfSprints"
+  },
+  {
+    "id": "GET /captcha",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/captcha"
+  },
+  {
+    "id": "GET /captcha#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/captcha",
+    "status": 200
+  },
+  {
+    "id": "POST /captcha",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/captcha"
+  },
+  {
+    "id": "POST /captcha#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/captcha",
+    "status": 200
+  },
+  {
+    "id": "POST /captcha#400",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/captcha",
+    "status": 400
+  },
+  {
+    "id": "POST /captcha#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/captcha",
+    "status": 404
+  },
+  {
+    "id": "POST /captcha#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/captcha",
+    "status": 422
+  },
+  {
+    "id": "POST /captcha?body.result",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/captcha",
+    "in": "body",
+    "param": "result"
+  },
+  {
+    "id": "POST /captcha?body.uuid",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/captcha",
+    "in": "body",
+    "param": "uuid"
+  },
+  {
+    "id": "POST /comments#400",
+    "type": "status",
+    "inScope": true,
+    "method": "POST",
+    "path": "/comments",
+    "status": 400
+  },
+  {
+    "id": "POST /comments#422",
+    "type": "status",
+    "inScope": true,
+    "method": "POST",
+    "path": "/comments",
+    "status": 422
+  },
+  {
+    "id": "GET /comments/search",
+    "type": "operation",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search"
+  },
+  {
+    "id": "GET /comments/search#200",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "status": 200
+  },
+  {
+    "id": "GET /comments/search?query._end",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "_end"
+  },
+  {
+    "id": "GET /comments/search?query._expand",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "_expand"
+  },
+  {
+    "id": "GET /comments/search?query._limit",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "_limit"
+  },
+  {
+    "id": "GET /comments/search?query._order",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "_order"
+  },
+  {
+    "id": "GET /comments/search?query._page",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "_page"
+  },
+  {
+    "id": "GET /comments/search?query._sort",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "_sort"
+  },
+  {
+    "id": "GET /comments/search?query._start",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "_start"
+  },
+  {
+    "id": "GET /comments/search?query.article_id",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "article_id"
+  },
+  {
+    "id": "GET /comments/search?query.date",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "date"
+  },
+  {
+    "id": "GET /comments/search?query.id",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "id"
+  },
+  {
+    "id": "GET /comments/search?query.q",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "q"
+  },
+  {
+    "id": "GET /comments/search?query.user_id",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/search",
+    "in": "query",
+    "param": "user_id"
+  },
+  {
+    "id": "GET /comments/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/{id}",
+    "status": 400
+  },
+  {
+    "id": "GET /comments/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments/{id}",
+    "status": 404
+  },
+  {
+    "id": "PUT /comments/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}"
+  },
+  {
+    "id": "PUT /comments/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "status": 200
+  },
+  {
+    "id": "PUT /comments/{id}#201",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "status": 201
+  },
+  {
+    "id": "PUT /comments/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "status": 400
+  },
+  {
+    "id": "PUT /comments/{id}#401",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "status": 401
+  },
+  {
+    "id": "PUT /comments/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "status": 404
+  },
+  {
+    "id": "PUT /comments/{id}#422",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "status": 422
+  },
+  {
+    "id": "PUT /comments/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PUT /comments/{id}?body.article_id",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "in": "body",
+    "param": "article_id"
+  },
+  {
+    "id": "PUT /comments/{id}?body.body",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "in": "body",
+    "param": "body"
+  },
+  {
+    "id": "PUT /comments/{id}?body.date",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/comments/{id}",
+    "in": "body",
+    "param": "date"
+  },
+  {
+    "id": "PATCH /comments/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}"
+  },
+  {
+    "id": "PATCH /comments/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "status": 200
+  },
+  {
+    "id": "PATCH /comments/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "status": 400
+  },
+  {
+    "id": "PATCH /comments/{id}#401",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "status": 401
+  },
+  {
+    "id": "PATCH /comments/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "status": 404
+  },
+  {
+    "id": "PATCH /comments/{id}#422",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "status": 422
+  },
+  {
+    "id": "PATCH /comments/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /comments/{id}?body.article_id",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "in": "body",
+    "param": "article_id"
+  },
+  {
+    "id": "PATCH /comments/{id}?body.body",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "in": "body",
+    "param": "body"
+  },
+  {
+    "id": "PATCH /comments/{id}?body.date",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "in": "body",
+    "param": "date"
+  },
+  {
+    "id": "PATCH /comments/{id}?body.user_id",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/comments/{id}",
+    "in": "body",
+    "param": "user_id"
+  },
+  {
+    "id": "DELETE /comments/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/comments/{id}"
+  },
+  {
+    "id": "DELETE /comments/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/comments/{id}",
+    "status": 200
+  },
+  {
+    "id": "DELETE /comments/{id}#401",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/comments/{id}",
+    "status": 401
+  },
+  {
+    "id": "DELETE /comments/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/comments/{id}",
+    "status": 404
+  },
+  {
+    "id": "DELETE /comments/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/comments/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "HEAD /comments/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/comments/{id}"
+  },
+  {
+    "id": "HEAD /comments/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/comments/{id}",
+    "status": 200
+  },
+  {
+    "id": "HEAD /comments/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/comments/{id}",
+    "status": 400
+  },
+  {
+    "id": "HEAD /comments/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/comments/{id}",
+    "status": 404
+  },
+  {
+    "id": "HEAD /comments/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/comments/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "POST /diagnostic/log-level",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/diagnostic/log-level"
+  },
+  {
+    "id": "POST /diagnostic/log-level#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/diagnostic/log-level",
+    "status": 200
+  },
+  {
+    "id": "POST /diagnostic/log-level?body.level",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/diagnostic/log-level",
+    "in": "body",
+    "param": "level"
+  },
+  {
+    "id": "GET /diagnostic/request/histogram",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/diagnostic/request/histogram"
+  },
+  {
+    "id": "GET /diagnostic/request/histogram#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/diagnostic/request/histogram",
+    "status": 200
+  },
+  {
+    "id": "GET /diagnostic/toggle-diagnostics",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/diagnostic/toggle-diagnostics"
+  },
+  {
+    "id": "GET /diagnostic/toggle-diagnostics#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/diagnostic/toggle-diagnostics",
+    "status": 200
+  },
+  {
+    "id": "GET /diagnostic/toggle-logs",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/diagnostic/toggle-logs"
+  },
+  {
+    "id": "GET /diagnostic/toggle-logs#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/diagnostic/toggle-logs",
+    "status": 200
+  },
+  {
+    "id": "GET /diagnostic/toggle-metrics",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/diagnostic/toggle-metrics"
+  },
+  {
+    "id": "GET /diagnostic/toggle-metrics#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/diagnostic/toggle-metrics",
+    "status": 200
+  },
+  {
+    "id": "GET /files/uploaded",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded"
+  },
+  {
+    "id": "GET /files/uploaded#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded",
+    "status": 200
+  },
+  {
+    "id": "GET /files/uploaded#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded",
+    "status": 401
+  },
+  {
+    "id": "GET /files/uploaded#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded",
+    "status": 404
+  },
+  {
+    "id": "GET /files/uploaded/public",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/public"
+  },
+  {
+    "id": "GET /files/uploaded/public#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/public",
+    "status": 200
+  },
+  {
+    "id": "GET /files/uploaded/public#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/public",
+    "status": 404
+  },
+  {
+    "id": "GET /files/uploaded/public/users/{userIds}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/public/users/{userIds}"
+  },
+  {
+    "id": "GET /files/uploaded/public/users/{userIds}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/public/users/{userIds}",
+    "status": 200
+  },
+  {
+    "id": "GET /files/uploaded/public/users/{userIds}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/public/users/{userIds}",
+    "status": 404
+  },
+  {
+    "id": "GET /files/uploaded/public/users/{userIds}?path.userIds",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/public/users/{userIds}",
+    "in": "path",
+    "param": "userIds"
+  },
+  {
+    "id": "GET /files/uploaded/{userId}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/{userId}"
+  },
+  {
+    "id": "GET /files/uploaded/{userId}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/{userId}",
+    "status": 200
+  },
+  {
+    "id": "GET /files/uploaded/{userId}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/{userId}",
+    "status": 401
+  },
+  {
+    "id": "GET /files/uploaded/{userId}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/{userId}",
+    "status": 404
+  },
+  {
+    "id": "GET /files/uploaded/{userId}?path.userId",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/files/uploaded/{userId}",
+    "in": "path",
+    "param": "userId"
+  },
+  {
+    "id": "GET /flashposts",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/flashposts"
+  },
+  {
+    "id": "GET /flashposts#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/flashposts",
+    "status": 200
+  },
+  {
+    "id": "GET /flashposts#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/flashposts",
+    "status": 401
+  },
+  {
+    "id": "GET /flashposts#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/flashposts",
+    "status": 404
+  },
+  {
+    "id": "POST /flashposts",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/flashposts"
+  },
+  {
+    "id": "POST /flashposts#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/flashposts",
+    "status": 200
+  },
+  {
+    "id": "POST /flashposts#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/flashposts",
+    "status": 401
+  },
+  {
+    "id": "POST /flashposts#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/flashposts",
+    "status": 422
+  },
+  {
+    "id": "POST /flashposts?body.body",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/flashposts",
+    "in": "body",
+    "param": "body"
+  },
+  {
+    "id": "POST /flashposts?body.is_public",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/flashposts",
+    "in": "body",
+    "param": "is_public"
+  },
+  {
+    "id": "POST /flashposts?body.settings",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/flashposts",
+    "in": "body",
+    "param": "settings"
+  },
+  {
+    "id": "POST /flashposts?body.user_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/flashposts",
+    "in": "body",
+    "param": "user_id"
+  },
+  {
+    "id": "GET /flashposts/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/flashposts/{id}"
+  },
+  {
+    "id": "GET /flashposts/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/flashposts/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /flashposts/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/flashposts/{id}",
+    "status": 401
+  },
+  {
+    "id": "GET /flashposts/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/flashposts/{id}",
+    "status": 404
+  },
+  {
+    "id": "GET /flashposts/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/flashposts/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /flashposts/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}"
+  },
+  {
+    "id": "PATCH /flashposts/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "status": 200
+  },
+  {
+    "id": "PATCH /flashposts/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "status": 401
+  },
+  {
+    "id": "PATCH /flashposts/{id}#403",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "status": 403
+  },
+  {
+    "id": "PATCH /flashposts/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "status": 404
+  },
+  {
+    "id": "PATCH /flashposts/{id}#422",
+    "type": "status",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "status": 422
+  },
+  {
+    "id": "PATCH /flashposts/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /flashposts/{id}?body.body",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "in": "body",
+    "param": "body"
+  },
+  {
+    "id": "PATCH /flashposts/{id}?body.date",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "in": "body",
+    "param": "date"
+  },
+  {
+    "id": "PATCH /flashposts/{id}?body.is_public",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "in": "body",
+    "param": "is_public"
+  },
+  {
+    "id": "PATCH /flashposts/{id}?body.settings",
+    "type": "param",
+    "inScope": false,
+    "method": "PATCH",
+    "path": "/flashposts/{id}",
+    "in": "body",
+    "param": "settings"
+  },
+  {
+    "id": "DELETE /flashposts/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/flashposts/{id}"
+  },
+  {
+    "id": "DELETE /flashposts/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/flashposts/{id}",
+    "status": 200
+  },
+  {
+    "id": "DELETE /flashposts/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/flashposts/{id}",
+    "status": 401
+  },
+  {
+    "id": "DELETE /flashposts/{id}#403",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/flashposts/{id}",
+    "status": 403
+  },
+  {
+    "id": "DELETE /flashposts/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/flashposts/{id}",
+    "status": 404
+  },
+  {
+    "id": "DELETE /flashposts/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "DELETE",
+    "path": "/flashposts/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /games",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/games"
+  },
+  {
+    "id": "GET /games#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/games",
+    "status": 200
+  },
+  {
+    "id": "GET /hangman/highscores",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/hangman/highscores"
+  },
+  {
+    "id": "GET /hangman/highscores#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/hangman/highscores",
+    "status": 200
+  },
+  {
+    "id": "GET /hangman/random",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/hangman/random"
+  },
+  {
+    "id": "GET /hangman/random#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/hangman/random",
+    "status": 200
+  },
+  {
+    "id": "POST /hangman/score",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/hangman/score"
+  },
+  {
+    "id": "POST /hangman/score#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/hangman/score",
+    "status": 200
+  },
+  {
+    "id": "POST /hangman/score#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/hangman/score",
+    "status": 401
+  },
+  {
+    "id": "POST /hangman/score#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/hangman/score",
+    "status": 422
+  },
+  {
+    "id": "GET /health",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health"
+  },
+  {
+    "id": "GET /health#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health",
+    "status": 200
+  },
+  {
+    "id": "GET /health/configcheck",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/configcheck"
+  },
+  {
+    "id": "GET /health/configcheck#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/configcheck",
+    "status": 200
+  },
+  {
+    "id": "GET /health/db",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/db"
+  },
+  {
+    "id": "GET /health/db#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/db",
+    "status": 200
+  },
+  {
+    "id": "GET /health/dbcheck",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/dbcheck"
+  },
+  {
+    "id": "GET /health/dbcheck#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/dbcheck",
+    "status": 200
+  },
+  {
+    "id": "GET /health/memory",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/memory"
+  },
+  {
+    "id": "GET /health/memory#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/memory",
+    "status": 200
+  },
+  {
+    "id": "GET /health/uptime",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/uptime"
+  },
+  {
+    "id": "GET /health/uptime#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/health/uptime",
+    "status": 200
+  },
+  {
+    "id": "GET /images/posts",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/images/posts"
+  },
+  {
+    "id": "GET /images/posts#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/images/posts",
+    "status": 200
+  },
+  {
+    "id": "GET /images/user",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/images/user"
+  },
+  {
+    "id": "GET /images/user#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/images/user",
+    "status": 200
+  },
+  {
+    "id": "GET /labels",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/labels"
+  },
+  {
+    "id": "GET /labels#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/labels",
+    "status": 200
+  },
+  {
+    "id": "GET /labels#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/labels",
+    "status": 404
+  },
+  {
+    "id": "POST /likes",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes"
+  },
+  {
+    "id": "POST /likes#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "status": 200
+  },
+  {
+    "id": "POST /likes#201",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "status": 201
+  },
+  {
+    "id": "POST /likes#400",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "status": 400
+  },
+  {
+    "id": "POST /likes#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "status": 404
+  },
+  {
+    "id": "POST /likes#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "status": 422
+  },
+  {
+    "id": "POST /likes?body.article_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "in": "body",
+    "param": "article_id"
+  },
+  {
+    "id": "POST /likes?body.comment_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "in": "body",
+    "param": "comment_id"
+  },
+  {
+    "id": "POST /likes?body.date",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "in": "body",
+    "param": "date"
+  },
+  {
+    "id": "POST /likes?body.id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "in": "body",
+    "param": "id"
+  },
+  {
+    "id": "POST /likes?body.user_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/likes",
+    "in": "body",
+    "param": "user_id"
+  },
+  {
+    "id": "GET /likes/article",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article"
+  },
+  {
+    "id": "GET /likes/article#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article",
+    "status": 200
+  },
+  {
+    "id": "GET /likes/article#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article",
+    "status": 404
+  },
+  {
+    "id": "GET /likes/article/mylikes",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article/mylikes"
+  },
+  {
+    "id": "GET /likes/article/mylikes#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article/mylikes",
+    "status": 200
+  },
+  {
+    "id": "GET /likes/article/mylikes#400",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article/mylikes",
+    "status": 400
+  },
+  {
+    "id": "GET /likes/article/mylikes#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article/mylikes",
+    "status": 404
+  },
+  {
+    "id": "GET /likes/article/mylikes?query.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article/mylikes",
+    "in": "query",
+    "param": "id"
+  },
+  {
+    "id": "GET /likes/article/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article/{id}"
+  },
+  {
+    "id": "GET /likes/article/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /likes/article/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article/{id}",
+    "status": 404
+  },
+  {
+    "id": "GET /likes/article/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/article/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /likes/comment/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/comment/{id}"
+  },
+  {
+    "id": "GET /likes/comment/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/comment/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /likes/comment/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/comment/{id}",
+    "status": 404
+  },
+  {
+    "id": "GET /likes/comment/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/likes/comment/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /logs",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/logs"
+  },
+  {
+    "id": "GET /logs#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/logs",
+    "status": 200
+  },
+  {
+    "id": "GET /messenger/contacts",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/messenger/contacts"
+  },
+  {
+    "id": "GET /messenger/contacts#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/messenger/contacts",
+    "status": 200
+  },
+  {
+    "id": "PUT /messenger/contacts",
+    "type": "operation",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/messenger/contacts"
+  },
+  {
+    "id": "PUT /messenger/contacts#200",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/messenger/contacts",
+    "status": 200
+  },
+  {
+    "id": "PUT /messenger/contacts#404",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/messenger/contacts",
+    "status": 404
+  },
+  {
+    "id": "PUT /messenger/contacts#409",
+    "type": "status",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/messenger/contacts",
+    "status": 409
+  },
+  {
+    "id": "PUT /messenger/contacts?body.email",
+    "type": "param",
+    "inScope": false,
+    "method": "PUT",
+    "path": "/messenger/contacts",
+    "in": "body",
+    "param": "email"
+  },
+  {
+    "id": "GET /messenger/messages",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/messenger/messages"
+  },
+  {
+    "id": "GET /messenger/messages#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/messenger/messages",
+    "status": 200
+  },
+  {
+    "id": "GET /messenger/messages?query.idFrom",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/messenger/messages",
+    "in": "query",
+    "param": "idFrom"
+  },
+  {
+    "id": "GET /messenger/messages?query.userId",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/messenger/messages",
+    "in": "query",
+    "param": "userId"
+  },
+  {
+    "id": "POST /messenger/messages",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/messenger/messages"
+  },
+  {
+    "id": "POST /messenger/messages#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/messenger/messages",
+    "status": 200
+  },
+  {
+    "id": "POST /messenger/messages#404",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/messenger/messages",
+    "status": 404
+  },
+  {
+    "id": "POST /messenger/messages?body.content",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/messenger/messages",
+    "in": "body",
+    "param": "content"
+  },
+  {
+    "id": "POST /messenger/messages?body.to",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/messenger/messages",
+    "in": "body",
+    "param": "to"
+  },
+  {
+    "id": "GET /messenger/unread",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/messenger/unread"
+  },
+  {
+    "id": "GET /messenger/unread#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/messenger/unread",
+    "status": 200
+  },
+  {
+    "id": "GET /minesweeper/highscores",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/minesweeper/highscores"
+  },
+  {
+    "id": "GET /minesweeper/highscores#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/minesweeper/highscores",
+    "status": 200
+  },
+  {
+    "id": "POST /minesweeper/score",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/minesweeper/score"
+  },
+  {
+    "id": "POST /minesweeper/score#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/minesweeper/score",
+    "status": 200
+  },
+  {
+    "id": "POST /minesweeper/score#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/minesweeper/score",
+    "status": 401
+  },
+  {
+    "id": "POST /minesweeper/score#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/minesweeper/score",
+    "status": 422
+  },
+  {
+    "id": "GET /openapi.json",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/openapi.json"
+  },
+  {
+    "id": "GET /openapi.json#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/openapi.json",
+    "status": 200
+  },
+  {
+    "id": "GET /ping",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/ping"
+  },
+  {
+    "id": "GET /ping#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/ping",
+    "status": 200
+  },
+  {
+    "id": "GET /quiz/highscores",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/highscores"
+  },
+  {
+    "id": "GET /quiz/highscores#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/highscores",
+    "status": 200
+  },
+  {
+    "id": "GET /quiz/questions",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/questions"
+  },
+  {
+    "id": "GET /quiz/questions#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/questions",
+    "status": 200
+  },
+  {
+    "id": "GET /quiz/questions#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/questions",
+    "status": 401
+  },
+  {
+    "id": "POST /quiz/questions/check",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/quiz/questions/check"
+  },
+  {
+    "id": "POST /quiz/questions/check#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/quiz/questions/check",
+    "status": 200
+  },
+  {
+    "id": "POST /quiz/questions/check#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/quiz/questions/check",
+    "status": 401
+  },
+  {
+    "id": "POST /quiz/questions/check?body.questionText",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/quiz/questions/check",
+    "in": "body",
+    "param": "questionText"
+  },
+  {
+    "id": "POST /quiz/questions/check?body.selectedAnswers",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/quiz/questions/check",
+    "in": "body",
+    "param": "selectedAnswers"
+  },
+  {
+    "id": "GET /quiz/questions/count",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/questions/count"
+  },
+  {
+    "id": "GET /quiz/questions/count#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/questions/count",
+    "status": 200
+  },
+  {
+    "id": "GET /quiz/questions/count#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/questions/count",
+    "status": 401
+  },
+  {
+    "id": "GET /quiz/start",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/start"
+  },
+  {
+    "id": "GET /quiz/start#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/start",
+    "status": 200
+  },
+  {
+    "id": "GET /quiz/start#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/start",
+    "status": 401
+  },
+  {
+    "id": "GET /quiz/stop",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/stop"
+  },
+  {
+    "id": "GET /quiz/stop#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/stop",
+    "status": 200
+  },
+  {
+    "id": "GET /quiz/stop#201",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/stop",
+    "status": 201
+  },
+  {
+    "id": "GET /quiz/stop#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/quiz/stop",
+    "status": 401
+  },
+  {
+    "id": "GET /random/article",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/random/article"
+  },
+  {
+    "id": "GET /random/article#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/random/article",
+    "status": 200
+  },
+  {
+    "id": "GET /random/article#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/random/article",
+    "status": 404
+  },
+  {
+    "id": "GET /schema",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/schema"
+  },
+  {
+    "id": "GET /schema#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/schema",
+    "status": 200
+  },
+  {
+    "id": "GET /scores",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/scores"
+  },
+  {
+    "id": "GET /scores#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/scores",
+    "status": 200
+  },
+  {
+    "id": "GET /scores/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/scores/{id}"
+  },
+  {
+    "id": "GET /scores/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/scores/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /scores/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/scores/{id}",
+    "status": 404
+  },
+  {
+    "id": "GET /scores/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/scores/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /stats/activity/user",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/activity/user"
+  },
+  {
+    "id": "GET /stats/activity/user#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/activity/user",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/activity/user/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/activity/user/{id}"
+  },
+  {
+    "id": "GET /stats/activity/user/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/activity/user/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/activity/user/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/activity/user/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /stats/api",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/api"
+  },
+  {
+    "id": "GET /stats/api#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/api",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/api/details",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/api/details"
+  },
+  {
+    "id": "GET /stats/api/details#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/api/details",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/articles",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/articles"
+  },
+  {
+    "id": "GET /stats/articles#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/articles",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/articles?query.chartType",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/articles",
+    "in": "query",
+    "param": "chartType"
+  },
+  {
+    "id": "GET /stats/nonapi",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/nonapi"
+  },
+  {
+    "id": "GET /stats/nonapi#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/nonapi",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/nonapi/details",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/nonapi/details"
+  },
+  {
+    "id": "GET /stats/nonapi/details#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/nonapi/details",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/publications/articles",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/publications/articles"
+  },
+  {
+    "id": "GET /stats/publications/articles#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/publications/articles",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/publications/comments",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/publications/comments"
+  },
+  {
+    "id": "GET /stats/publications/comments#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/publications/comments",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/users",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/users"
+  },
+  {
+    "id": "GET /stats/users#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/users",
+    "status": 200
+  },
+  {
+    "id": "GET /stats/users?query.chartType",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/stats/users",
+    "in": "query",
+    "param": "chartType"
+  },
+  {
+    "id": "GET /surveys/responses",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/responses"
+  },
+  {
+    "id": "GET /surveys/responses#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/responses",
+    "status": 200
+  },
+  {
+    "id": "GET /surveys/responses#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/responses",
+    "status": 401
+  },
+  {
+    "id": "POST /surveys/responses",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses"
+  },
+  {
+    "id": "POST /surveys/responses#201",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses",
+    "status": 201
+  },
+  {
+    "id": "POST /surveys/responses#400",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses",
+    "status": 400
+  },
+  {
+    "id": "POST /surveys/responses#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses",
+    "status": 401
+  },
+  {
+    "id": "POST /surveys/responses#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses",
+    "status": 422
+  },
+  {
+    "id": "POST /surveys/responses?body.answers",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses",
+    "in": "body",
+    "param": "answers"
+  },
+  {
+    "id": "POST /surveys/responses?body.date",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses",
+    "in": "body",
+    "param": "date"
+  },
+  {
+    "id": "POST /surveys/responses?body.id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses",
+    "in": "body",
+    "param": "id"
+  },
+  {
+    "id": "POST /surveys/responses?body.type",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses",
+    "in": "body",
+    "param": "type"
+  },
+  {
+    "id": "POST /surveys/responses?body.user_id",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/surveys/responses",
+    "in": "body",
+    "param": "user_id"
+  },
+  {
+    "id": "GET /surveys/responses/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/responses/{id}"
+  },
+  {
+    "id": "GET /surveys/responses/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/responses/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /surveys/responses/{id}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/responses/{id}",
+    "status": 401
+  },
+  {
+    "id": "GET /surveys/responses/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/responses/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /surveys/statistics/{type}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/statistics/{type}"
+  },
+  {
+    "id": "GET /surveys/statistics/{type}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/statistics/{type}",
+    "status": 200
+  },
+  {
+    "id": "GET /surveys/statistics/{type}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/statistics/{type}",
+    "status": 404
+  },
+  {
+    "id": "GET /surveys/statistics/{type}?path.type",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/statistics/{type}",
+    "in": "path",
+    "param": "type"
+  },
+  {
+    "id": "GET /surveys/{surveyType}/description",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/description"
+  },
+  {
+    "id": "GET /surveys/{surveyType}/description#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/description",
+    "status": 200
+  },
+  {
+    "id": "GET /surveys/{surveyType}/description#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/description",
+    "status": 404
+  },
+  {
+    "id": "GET /surveys/{surveyType}/description?path.surveyType",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/description",
+    "in": "path",
+    "param": "surveyType"
+  },
+  {
+    "id": "GET /surveys/{surveyType}/questions/{id}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/questions/{id}"
+  },
+  {
+    "id": "GET /surveys/{surveyType}/questions/{id}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/questions/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /surveys/{surveyType}/questions/{id}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/questions/{id}",
+    "status": 404
+  },
+  {
+    "id": "GET /surveys/{surveyType}/questions/{id}?path.id",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/questions/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /surveys/{surveyType}/questions/{id}?path.surveyType",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/questions/{id}",
+    "in": "path",
+    "param": "surveyType"
+  },
+  {
+    "id": "GET /tic-tac-toe/highscores",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/tic-tac-toe/highscores"
+  },
+  {
+    "id": "GET /tic-tac-toe/highscores#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/tic-tac-toe/highscores",
+    "status": 200
+  },
+  {
+    "id": "POST /tic-tac-toe/join",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/join"
+  },
+  {
+    "id": "POST /tic-tac-toe/join#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/join",
+    "status": 200
+  },
+  {
+    "id": "POST /tic-tac-toe/join#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/join",
+    "status": 401
+  },
+  {
+    "id": "POST /tic-tac-toe/join#403",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/join",
+    "status": 403
+  },
+  {
+    "id": "POST /tic-tac-toe/join#409",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/join",
+    "status": 409
+  },
+  {
+    "id": "POST /tic-tac-toe/join#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/join",
+    "status": 422
+  },
+  {
+    "id": "POST /tic-tac-toe/join?body.code",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/join",
+    "in": "body",
+    "param": "code"
+  },
+  {
+    "id": "POST /tic-tac-toe/start",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/start"
+  },
+  {
+    "id": "POST /tic-tac-toe/start#201",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/start",
+    "status": 201
+  },
+  {
+    "id": "POST /tic-tac-toe/start#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/start",
+    "status": 401
+  },
+  {
+    "id": "POST /tic-tac-toe/status",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/status"
+  },
+  {
+    "id": "POST /tic-tac-toe/status#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/status",
+    "status": 200
+  },
+  {
+    "id": "POST /tic-tac-toe/status#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/status",
+    "status": 401
+  },
+  {
+    "id": "POST /tic-tac-toe/status#403",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/status",
+    "status": 403
+  },
+  {
+    "id": "POST /tic-tac-toe/status#422",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/status",
+    "status": 422
+  },
+  {
+    "id": "POST /tic-tac-toe/status?body.code",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/status",
+    "in": "body",
+    "param": "code"
+  },
+  {
+    "id": "POST /tic-tac-toe/status?body.move",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/status",
+    "in": "body",
+    "param": "move"
+  },
+  {
+    "id": "GET /tic-tac-toe/status/{code}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/tic-tac-toe/status/{code}"
+  },
+  {
+    "id": "GET /tic-tac-toe/status/{code}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/tic-tac-toe/status/{code}",
+    "status": 200
+  },
+  {
+    "id": "GET /tic-tac-toe/status/{code}#401",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/tic-tac-toe/status/{code}",
+    "status": 401
+  },
+  {
+    "id": "GET /tic-tac-toe/status/{code}#404",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/tic-tac-toe/status/{code}",
+    "status": 404
+  },
+  {
+    "id": "GET /tic-tac-toe/status/{code}?path.code",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/tic-tac-toe/status/{code}",
+    "in": "path",
+    "param": "code"
+  },
+  {
+    "id": "POST /tic-tac-toe/stop",
+    "type": "operation",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/stop"
+  },
+  {
+    "id": "POST /tic-tac-toe/stop#200",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/stop",
+    "status": 200
+  },
+  {
+    "id": "POST /tic-tac-toe/stop#401",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/stop",
+    "status": 401
+  },
+  {
+    "id": "POST /tic-tac-toe/stop#403",
+    "type": "status",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/stop",
+    "status": 403
+  },
+  {
+    "id": "POST /tic-tac-toe/stop?body.code",
+    "type": "param",
+    "inScope": false,
+    "method": "POST",
+    "path": "/tic-tac-toe/stop",
+    "in": "body",
+    "param": "code"
+  },
+  {
+    "id": "GET /users",
+    "type": "operation",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users"
+  },
+  {
+    "id": "GET /users#200",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users",
+    "status": 200
+  },
+  {
+    "id": "POST /users",
+    "type": "operation",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users"
+  },
+  {
+    "id": "POST /users#201",
+    "type": "status",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users",
+    "status": 201
+  },
+  {
+    "id": "POST /users#400",
+    "type": "status",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users",
+    "status": 400
+  },
+  {
+    "id": "POST /users#409",
+    "type": "status",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users",
+    "status": 409
+  },
+  {
+    "id": "POST /users#422",
+    "type": "status",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users",
+    "status": 422
+  },
+  {
+    "id": "POST /users?body.avatar",
+    "type": "param",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users",
+    "in": "body",
+    "param": "avatar"
+  },
+  {
+    "id": "POST /users?body.email",
+    "type": "param",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users",
+    "in": "body",
+    "param": "email"
+  },
+  {
+    "id": "POST /users?body.firstname",
+    "type": "param",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users",
+    "in": "body",
+    "param": "firstname"
+  },
+  {
+    "id": "POST /users?body.lastname",
+    "type": "param",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users",
+    "in": "body",
+    "param": "lastname"
+  },
+  {
+    "id": "POST /users?body.password",
+    "type": "param",
+    "inScope": true,
+    "method": "POST",
+    "path": "/users",
+    "in": "body",
+    "param": "password"
+  },
+  {
+    "id": "GET /users/search",
+    "type": "operation",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search"
+  },
+  {
+    "id": "GET /users/search#200",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "status": 200
+  },
+  {
+    "id": "GET /users/search?query._embed",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "_embed"
+  },
+  {
+    "id": "GET /users/search?query._end",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "_end"
+  },
+  {
+    "id": "GET /users/search?query._limit",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "_limit"
+  },
+  {
+    "id": "GET /users/search?query._order",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "_order"
+  },
+  {
+    "id": "GET /users/search?query._page",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "_page"
+  },
+  {
+    "id": "GET /users/search?query._sort",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "_sort"
+  },
+  {
+    "id": "GET /users/search?query._start",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "_start"
+  },
+  {
+    "id": "GET /users/search?query.email",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "email"
+  },
+  {
+    "id": "GET /users/search?query.firstname",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "firstname"
+  },
+  {
+    "id": "GET /users/search?query.id",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "id"
+  },
+  {
+    "id": "GET /users/search?query.lastname",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "lastname"
+  },
+  {
+    "id": "GET /users/search?query.q",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/search",
+    "in": "query",
+    "param": "q"
+  },
+  {
+    "id": "GET /users/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/{id}"
+  },
+  {
+    "id": "GET /users/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /users/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/{id}",
+    "status": 400
+  },
+  {
+    "id": "GET /users/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/{id}",
+    "status": 404
+  },
+  {
+    "id": "GET /users/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "GET",
+    "path": "/users/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PUT /users/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}"
+  },
+  {
+    "id": "PUT /users/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "status": 200
+  },
+  {
+    "id": "PUT /users/{id}#201",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "status": 201
+  },
+  {
+    "id": "PUT /users/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "status": 400
+  },
+  {
+    "id": "PUT /users/{id}#401",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "status": 401
+  },
+  {
+    "id": "PUT /users/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "status": 404
+  },
+  {
+    "id": "PUT /users/{id}#422",
+    "type": "status",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "status": 422
+  },
+  {
+    "id": "PUT /users/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PUT /users/{id}?body.avatar",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "avatar"
+  },
+  {
+    "id": "PUT /users/{id}?body.email",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "email"
+  },
+  {
+    "id": "PUT /users/{id}?body.firstname",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "firstname"
+  },
+  {
+    "id": "PUT /users/{id}?body.lastname",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "lastname"
+  },
+  {
+    "id": "PUT /users/{id}?body.password",
+    "type": "param",
+    "inScope": true,
+    "method": "PUT",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "password"
+  },
+  {
+    "id": "PATCH /users/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}"
+  },
+  {
+    "id": "PATCH /users/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "status": 200
+  },
+  {
+    "id": "PATCH /users/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "status": 400
+  },
+  {
+    "id": "PATCH /users/{id}#401",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "status": 401
+  },
+  {
+    "id": "PATCH /users/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "status": 404
+  },
+  {
+    "id": "PATCH /users/{id}#422",
+    "type": "status",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "status": 422
+  },
+  {
+    "id": "PATCH /users/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "PATCH /users/{id}?body.avatar",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "avatar"
+  },
+  {
+    "id": "PATCH /users/{id}?body.email",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "email"
+  },
+  {
+    "id": "PATCH /users/{id}?body.firstname",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "firstname"
+  },
+  {
+    "id": "PATCH /users/{id}?body.lastname",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "lastname"
+  },
+  {
+    "id": "PATCH /users/{id}?body.password",
+    "type": "param",
+    "inScope": true,
+    "method": "PATCH",
+    "path": "/users/{id}",
+    "in": "body",
+    "param": "password"
+  },
+  {
+    "id": "DELETE /users/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/users/{id}"
+  },
+  {
+    "id": "DELETE /users/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/users/{id}",
+    "status": 200
+  },
+  {
+    "id": "DELETE /users/{id}#401",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/users/{id}",
+    "status": 401
+  },
+  {
+    "id": "DELETE /users/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/users/{id}",
+    "status": 404
+  },
+  {
+    "id": "DELETE /users/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/users/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "HEAD /users/{id}",
+    "type": "operation",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/users/{id}"
+  },
+  {
+    "id": "HEAD /users/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/users/{id}",
+    "status": 200
+  },
+  {
+    "id": "HEAD /users/{id}#400",
+    "type": "status",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/users/{id}",
+    "status": 400
+  },
+  {
+    "id": "HEAD /users/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/users/{id}",
+    "status": 404
+  },
+  {
+    "id": "HEAD /users/{id}?path.id",
+    "type": "param",
+    "inScope": true,
+    "method": "HEAD",
+    "path": "/users/{id}",
+    "in": "path",
+    "param": "id"
+  },
+  {
+    "id": "GET /v1/data/costs",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/data/costs"
+  },
+  {
+    "id": "GET /v1/data/costs#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/data/costs",
+    "status": 200
+  },
+  {
+    "id": "GET /v1/data/costs?query.days",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/data/costs",
+    "in": "query",
+    "param": "days"
+  },
+  {
+    "id": "GET /v1/data/weather",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/data/weather"
+  },
+  {
+    "id": "GET /v1/data/weather#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/data/weather",
+    "status": 200
+  },
+  {
+    "id": "GET /v1/data/weather?query.days",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/data/weather",
+    "in": "query",
+    "param": "days"
+  },
+  {
+    "id": "GET /v1/languages",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/languages"
+  },
+  {
+    "id": "GET /v1/languages#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/languages",
+    "status": 200
+  },
+  {
+    "id": "GET /v1/languages/translations",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/languages/translations"
+  },
+  {
+    "id": "GET /v1/languages/translations#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/languages/translations",
+    "status": 200
+  },
+  {
+    "id": "GET /v1/languages/translations/{lang}",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/languages/translations/{lang}"
+  },
+  {
+    "id": "GET /v1/languages/translations/{lang}#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/languages/translations/{lang}",
+    "status": 200
+  },
+  {
+    "id": "GET /v1/languages/translations/{lang}?path.lang",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/v1/languages/translations/{lang}",
+    "in": "path",
+    "param": "lang"
+  },
+  {
+    "id": "GET /visits/articles",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/articles"
+  },
+  {
+    "id": "GET /visits/articles#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/articles",
+    "status": 200
+  },
+  {
+    "id": "GET /visits/articles?query.ids",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/articles",
+    "in": "query",
+    "param": "ids"
+  },
+  {
+    "id": "GET /visits/comments",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/comments"
+  },
+  {
+    "id": "GET /visits/comments#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/comments",
+    "status": 200
+  },
+  {
+    "id": "GET /visits/comments?query.ids",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/comments",
+    "in": "query",
+    "param": "ids"
+  },
+  {
+    "id": "GET /visits/top/articles",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/top/articles"
+  },
+  {
+    "id": "GET /visits/top/articles#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/top/articles",
+    "status": 200
+  },
+  {
+    "id": "GET /visits/top/comments",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/top/comments"
+  },
+  {
+    "id": "GET /visits/top/comments#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/top/comments",
+    "status": 200
+  },
+  {
+    "id": "GET /visits/top/users",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/top/users"
+  },
+  {
+    "id": "GET /visits/top/users#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/top/users",
+    "status": 200
+  },
+  {
+    "id": "GET /visits/users",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/users"
+  },
+  {
+    "id": "GET /visits/users#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/users",
+    "status": 200
+  },
+  {
+    "id": "GET /visits/users?query.ids",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/visits/users",
+    "in": "query",
+    "param": "ids"
+  }
+]

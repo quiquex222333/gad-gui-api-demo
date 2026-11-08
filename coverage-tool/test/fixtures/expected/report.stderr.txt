@@ -1,0 +1,3 @@
+warning INVALID_LINE: line 10: invalid JSON
+warning NON_NUMERIC_RESPONSE_KEY: GET /users: response key "default" ignored
+warning PATH_TEMPLATE_MISMATCH: GET /articles/search: recorder "/articles/{id}" != derived "/articles/search"

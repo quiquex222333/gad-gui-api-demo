@@ -1,0 +1,89 @@
+[
+  {
+    "id": "POST /articles#422",
+    "type": "status",
+    "inScope": true,
+    "method": "POST",
+    "path": "/articles",
+    "status": 422
+  },
+  {
+    "id": "POST /articles?body.body",
+    "type": "param",
+    "inScope": true,
+    "method": "POST",
+    "path": "/articles",
+    "in": "body",
+    "param": "body"
+  },
+  {
+    "id": "GET /articles/{id}#404",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/articles/{id}",
+    "status": 404
+  },
+  {
+    "id": "DELETE /articles/{id}#200",
+    "type": "status",
+    "inScope": true,
+    "method": "DELETE",
+    "path": "/articles/{id}",
+    "status": 200
+  },
+  {
+    "id": "GET /comments",
+    "type": "operation",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments"
+  },
+  {
+    "id": "GET /comments#200",
+    "type": "status",
+    "inScope": true,
+    "method": "GET",
+    "path": "/comments",
+    "status": 200
+  },
+  {
+    "id": "GET /surveys/{surveyType}/description",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/description"
+  },
+  {
+    "id": "GET /surveys/{surveyType}/description#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/description",
+    "status": 200
+  },
+  {
+    "id": "GET /surveys/{surveyType}/description?path.surveyType",
+    "type": "param",
+    "inScope": false,
+    "method": "GET",
+    "path": "/surveys/{surveyType}/description",
+    "in": "path",
+    "param": "surveyType"
+  },
+  {
+    "id": "GET /users",
+    "type": "operation",
+    "inScope": false,
+    "method": "GET",
+    "path": "/users"
+  },
+  {
+    "id": "GET /users#200",
+    "type": "status",
+    "inScope": false,
+    "method": "GET",
+    "path": "/users",
+    "status": 200
+  }
+]

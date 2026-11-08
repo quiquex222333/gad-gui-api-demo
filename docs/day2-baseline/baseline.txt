@@ -1,0 +1,49 @@
+Coverage summary
+dimension   scope  scope %  global  global %
+----------  -----  -------  ------  --------
+operations   8/26   30.77%   8/164     4.88%
+statuses    12/81   14.81%  12/381     3.15%
+parameters  11/91   12.09%  11/244     4.51%
+
+In-scope operations
+method  path              requests  statuses  params
+------  ----------------  --------  --------  ------
+GET     /articles                2       1/1     0/0
+POST    /articles                2       2/4     4/4
+GET     /articles/search         0       0/1    0/12
+GET     /articles/{id}           3       1/2     1/1
+PUT     /articles/{id}           0       0/6     0/5
+PATCH   /articles/{id}           0       0/5     0/6
+DELETE  /articles/{id}           0       0/3     0/1
+HEAD    /articles/{id}           0       0/3     0/1
+GET     /comments                1       1/1     0/0
+POST    /comments                2       2/4     3/3
+GET     /comments/search         0       0/1    0/12
+GET     /comments/{id}           2       1/3     1/1
+PUT     /comments/{id}           0       0/6     0/4
+PATCH   /comments/{id}           0       0/5     0/5
+DELETE  /comments/{id}           0       0/3     0/1
+HEAD    /comments/{id}           0       0/3     0/1
+GET     /login                   2       2/2     0/0
+POST    /login                   2       2/2     2/2
+GET     /users                   0       0/1     0/0
+POST    /users                   0       0/4     0/5
+GET     /users/search            0       0/1    0/12
+GET     /users/{id}              0       0/3     0/1
+PUT     /users/{id}              0       0/6     0/6
+PATCH   /users/{id}              0       0/5     0/6
+DELETE  /users/{id}              0       0/3     0/1
+HEAD    /users/{id}              0       0/3     0/1
+
+Drift
+  unmatched requests:    0
+  undocumented statuses: 0
+  undocumented params:   0
+
+Warnings: 0 (0 distinct)
+
+Request lines: total 18, invalid 0, non-test 2, null status 0, excluded 0, counted 16, unmatched 0
+
+Written:
+  docs/day2-baseline/report.json
+  docs/day2-baseline/gaps.json

@@ -1,0 +1,4 @@
+{
+  "scope": ["/articles*", "/comments*", "/users*", "/login"],
+  "exclude": ["/restore*", "/debug/*"]
+}

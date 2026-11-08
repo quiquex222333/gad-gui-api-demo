@@ -1,0 +1,380 @@
+{
+  "schemaVersion": "1.0.0",
+  "tool": {
+    "name": "gad-coverage-tool",
+    "version": "1.0.0"
+  },
+  "inputs": {
+    "spec": {
+      "path": "coverage-tool/test/fixtures/mini-openapi.json",
+      "sha256": "283d71ac70645f425db578dcd9ec624840bf2a969df4c5d017c64ba916394253",
+      "openapi": "3.0.1",
+      "infoVersion": "0.0.1",
+      "operationsTotal": 11,
+      "operationsExcluded": 2
+    },
+    "requests": {
+      "path": "coverage-tool/test/fixtures/requests-mini.jsonl",
+      "sha256": "9159859feddb56a264f9ff9908ea9e0163099cb7ff60e0da660a2c960c51b9be",
+      "lines": {
+        "total": 15,
+        "invalid": 1,
+        "nonTest": 2,
+        "nullStatus": 1,
+        "excluded": 1,
+        "counted": 10,
+        "unmatched": 2
+      }
+    },
+    "config": {
+      "path": "coverage-tool/test/fixtures/mini.config.json",
+      "sha256": "757abd421c9af6d4521047b8bbc8d59e4f796ba8f573dc3fe23fa1b73cf75b2e",
+      "scope": [
+        "/articles*",
+        "/comments*"
+      ],
+      "exclude": [
+        "/restore*",
+        "/debug/*"
+      ]
+    }
+  },
+  "summary": {
+    "scope": {
+      "operations": {
+        "covered": 5,
+        "total": 6,
+        "percent": 83.33
+      },
+      "statuses": {
+        "covered": 4,
+        "total": 8,
+        "percent": 50
+      },
+      "parameters": {
+        "covered": 6,
+        "total": 7,
+        "percent": 85.71
+      }
+    },
+    "global": {
+      "operations": {
+        "covered": 6,
+        "total": 9,
+        "percent": 66.67
+      },
+      "statuses": {
+        "covered": 5,
+        "total": 11,
+        "percent": 45.45
+      },
+      "parameters": {
+        "covered": 7,
+        "total": 9,
+        "percent": 77.78
+      }
+    }
+  },
+  "operations": [
+    {
+      "id": "GET /articles",
+      "method": "GET",
+      "path": "/articles",
+      "inScope": true,
+      "covered": true,
+      "requests": 2,
+      "statuses": [
+        {
+          "status": 200,
+          "documented": true,
+          "requests": 2
+        }
+      ],
+      "parameters": [
+        {
+          "in": "query",
+          "name": "_limit",
+          "documented": true,
+          "required": false,
+          "requests": 1
+        },
+        {
+          "in": "query",
+          "name": "bogus",
+          "documented": false,
+          "required": false,
+          "requests": 1
+        }
+      ]
+    },
+    {
+      "id": "POST /articles",
+      "method": "POST",
+      "path": "/articles",
+      "inScope": true,
+      "covered": true,
+      "requests": 2,
+      "statuses": [
+        {
+          "status": 201,
+          "documented": true,
+          "requests": 2
+        },
+        {
+          "status": 422,
+          "documented": true,
+          "requests": 0
+        }
+      ],
+      "parameters": [
+        {
+          "in": "body",
+          "name": "body",
+          "documented": true,
+          "required": false,
+          "requests": 0
+        },
+        {
+          "in": "body",
+          "name": "image",
+          "documented": true,
+          "required": false,
+          "requests": 1
+        },
+        {
+          "in": "body",
+          "name": "title",
+          "documented": true,
+          "required": true,
+          "requests": 2
+        }
+      ]
+    },
+    {
+      "id": "GET /articles/search",
+      "method": "GET",
+      "path": "/articles/search",
+      "inScope": true,
+      "covered": true,
+      "requests": 1,
+      "statuses": [
+        {
+          "status": 200,
+          "documented": true,
+          "requests": 1
+        }
+      ],
+      "parameters": [
+        {
+          "in": "query",
+          "name": "query",
+          "documented": true,
+          "required": true,
+          "requests": 1
+        }
+      ]
+    },
+    {
+      "id": "GET /articles/{id}",
+      "method": "GET",
+      "path": "/articles/{id}",
+      "inScope": true,
+      "covered": true,
+      "requests": 1,
+      "statuses": [
+        {
+          "status": 200,
+          "documented": true,
+          "requests": 1
+        },
+        {
+          "status": 404,
+          "documented": true,
+          "requests": 0
+        }
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "documented": true,
+          "required": true,
+          "requests": 1
+        }
+      ]
+    },
+    {
+      "id": "DELETE /articles/{id}",
+      "method": "DELETE",
+      "path": "/articles/{id}",
+      "inScope": true,
+      "covered": true,
+      "requests": 1,
+      "statuses": [
+        {
+          "status": 200,
+          "documented": true,
+          "requests": 0
+        },
+        {
+          "status": 404,
+          "documented": false,
+          "requests": 1
+        }
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "documented": true,
+          "required": true,
+          "requests": 1
+        }
+      ]
+    },
+    {
+      "id": "GET /comments",
+      "method": "GET",
+      "path": "/comments",
+      "inScope": true,
+      "covered": false,
+      "requests": 0,
+      "statuses": [
+        {
+          "status": 200,
+          "documented": true,
+          "requests": 0
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "id": "GET /surveys/statistics/{type}",
+      "method": "GET",
+      "path": "/surveys/statistics/{type}",
+      "inScope": false,
+      "covered": true,
+      "requests": 1,
+      "statuses": [
+        {
+          "status": 200,
+          "documented": true,
+          "requests": 1
+        }
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "type",
+          "documented": true,
+          "required": true,
+          "requests": 1
+        }
+      ]
+    },
+    {
+      "id": "GET /surveys/{surveyType}/description",
+      "method": "GET",
+      "path": "/surveys/{surveyType}/description",
+      "inScope": false,
+      "covered": false,
+      "requests": 0,
+      "statuses": [
+        {
+          "status": 200,
+          "documented": true,
+          "requests": 0
+        }
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "surveyType",
+          "documented": true,
+          "required": true,
+          "requests": 0
+        }
+      ]
+    },
+    {
+      "id": "GET /users",
+      "method": "GET",
+      "path": "/users",
+      "inScope": false,
+      "covered": false,
+      "requests": 0,
+      "statuses": [
+        {
+          "status": 200,
+          "documented": true,
+          "requests": 0
+        }
+      ],
+      "parameters": []
+    }
+  ],
+  "drift": {
+    "unmatchedRequests": [
+      {
+        "method": "PATCH",
+        "actualPath": "/comments",
+        "reason": "no-method",
+        "matchedPath": "/comments",
+        "inScope": true,
+        "requests": 1,
+        "statuses": [
+          404
+        ]
+      },
+      {
+        "method": "GET",
+        "actualPath": "/nothing/here",
+        "reason": "no-path",
+        "matchedPath": null,
+        "inScope": false,
+        "requests": 1,
+        "statuses": [
+          404
+        ]
+      }
+    ],
+    "undocumentedStatuses": [
+      {
+        "id": "DELETE /articles/{id}#404",
+        "method": "DELETE",
+        "path": "/articles/{id}",
+        "status": 404,
+        "inScope": true,
+        "requests": 1
+      }
+    ],
+    "undocumentedParams": [
+      {
+        "id": "GET /articles?query.bogus",
+        "method": "GET",
+        "path": "/articles",
+        "in": "query",
+        "param": "bogus",
+        "inScope": true,
+        "requests": 1
+      }
+    ]
+  },
+  "warnings": [
+    {
+      "code": "INVALID_LINE",
+      "message": "line 10: invalid JSON",
+      "count": 1
+    },
+    {
+      "code": "NON_NUMERIC_RESPONSE_KEY",
+      "message": "GET /users: response key \"default\" ignored",
+      "count": 1
+    },
+    {
+      "code": "PATH_TEMPLATE_MISMATCH",
+      "message": "GET /articles/search: recorder \"/articles/{id}\" != derived \"/articles/search\"",
+      "count": 1
+    }
+  ]
+}

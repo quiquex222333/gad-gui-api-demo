@@ -1,0 +1,84 @@
+name: api-coverage
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  api-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PORT: '3005'
+      GAD_URL: http://localhost:3005
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            api-tests/package-lock.json
+            coverage-tool/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm ci --prefix api-tests
+          npm ci --prefix coverage-tool
+
+      - name: Start GAD server
+        run: |
+          nohup node server.js > server.log 2>&1 &
+          echo "Waiting for server on port $PORT..."
+          for i in $(seq 1 60); do
+            if curl -fsS "http://localhost:$PORT/api/restore/list" > /dev/null; then
+              echo "Server is up after ${i}s"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Server did not become ready in 60s" >&2
+          cat server.log >&2
+          exit 1
+
+      # Playwright API tests need no browser binaries, so `playwright install` is skipped.
+      - name: Run API tests
+        working-directory: api-tests
+        run: npx playwright test
+
+      - name: Coverage report
+        if: ${{ !cancelled() }}
+        run: |
+          set -o pipefail
+          npm run --silent coverage:report | tee coverage-table.txt
+          {
+            echo '## API coverage'
+            echo '```'
+            cat coverage-table.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload coverage report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: |
+            coverage-tool/out/report.json
+            coverage-tool/out/gaps.json
+          if-no-files-found: error
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: api-tests/playwright-report
+          if-no-files-found: warn
+
+      - name: Server log on failure
+        if: failure()
+        run: cat server.log

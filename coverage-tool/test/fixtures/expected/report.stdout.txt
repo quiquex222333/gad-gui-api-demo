@@ -1,0 +1,29 @@
+Coverage summary
+dimension   scope  scope %  global  global %
+----------  -----  -------  ------  --------
+operations    5/6   83.33%     6/9    66.67%
+statuses      4/8   50.00%    5/11    45.45%
+parameters    6/7   85.71%     7/9    77.78%
+
+In-scope operations
+method  path              requests  statuses  params
+------  ----------------  --------  --------  ------
+GET     /articles                2       1/1     1/1
+POST    /articles                2       1/2     2/3
+GET     /articles/search         1       1/1     1/1
+GET     /articles/{id}           1       1/2     1/1
+DELETE  /articles/{id}           1       0/1     1/1
+GET     /comments                0       0/1     0/0
+
+Drift
+  unmatched requests:    2
+  undocumented statuses: 1
+  undocumented params:   1
+
+Warnings: 3 (3 distinct)
+
+Request lines: total 15, invalid 1, non-test 2, null status 1, excluded 1, counted 10, unmatched 2
+
+Written:
+  coverage-tool/test/fixtures/expected/report.json
+  coverage-tool/test/fixtures/expected/gaps.json
