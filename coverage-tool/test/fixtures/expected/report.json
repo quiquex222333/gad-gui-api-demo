@@ -73,8 +73,70 @@
         "total": 9,
         "percent": 77.78
       }
+    },
+    "effective": {
+      "scope": {
+        "operations": {
+          "covered": 4,
+          "total": 5,
+          "percent": 80
+        },
+        "statuses": {
+          "covered": 4,
+          "total": 6,
+          "percent": 66.67
+        },
+        "parameters": {
+          "covered": 6,
+          "total": 7,
+          "percent": 85.71
+        }
+      },
+      "global": {
+        "operations": {
+          "covered": 5,
+          "total": 8,
+          "percent": 62.5
+        },
+        "statuses": {
+          "covered": 5,
+          "total": 9,
+          "percent": 55.56
+        },
+        "parameters": {
+          "covered": 7,
+          "total": 9,
+          "percent": 77.78
+        }
+      }
     }
   },
+  "waivers": [
+    {
+      "id": "GET /articles",
+      "kind": "unreachable",
+      "reason": "fixture: already covered, so the waiver is unneeded",
+      "evidence": "fixture evidence",
+      "approvedBy": "Test Approver",
+      "covered": true
+    },
+    {
+      "id": "GET /articles/{id}#404",
+      "kind": "unreachable",
+      "reason": "fixture: no code path",
+      "evidence": "fixture evidence",
+      "approvedBy": "Test Approver",
+      "covered": false
+    },
+    {
+      "id": "POST /articles#422",
+      "kind": "known-bug",
+      "reason": "fixture: documented 422 is never returned",
+      "evidence": "fixture evidence",
+      "approvedBy": "Test Approver",
+      "covered": false
+    }
+  ],
   "operations": [
     {
       "id": "GET /articles",
@@ -374,6 +436,16 @@
     {
       "code": "PATH_TEMPLATE_MISMATCH",
       "message": "GET /articles/search: recorder \"/articles/{id}\" != derived \"/articles/search\"",
+      "count": 1
+    },
+    {
+      "code": "WAIVER_COVERED",
+      "message": "waiver \"GET /articles\" is already covered; it is no longer needed",
+      "count": 1
+    },
+    {
+      "code": "WAIVER_UNKNOWN_ID",
+      "message": "waiver \"GET /gone#200\" matches no documented item in the spec (stale?)",
       "count": 1
     }
   ]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "PUT /comments/{id}#404",
+    "kind": "unreachable",
+    "reason": "No code path returns 404: PUT on an unknown id is an upsert (the branch rewrites it as POST) and returns 201.",
+    "evidence": "endpoints/comments-endpoint.helpers.js:~190-260 (req.method = \"POST\" ~line 253); docs/agent-runs/batch-1-comments.md",
+    "approvedBy": "Enrique Rivera"
+  },
+  {
+    "id": "GET /comments/{id}#400",
+    "kind": "known-bug",
+    "reason": "Spec documents 400 for an invalid id; the app returns 404 {} for 'abc' because there is no id validation.",
+    "evidence": "test.fail() 'BUG?' test in api-tests/tests/comments.spec.js; docs/agent-runs/batch-1-comments.md",
+    "approvedBy": "Enrique Rivera"
+  },
+  {
+    "id": "HEAD /comments/{id}#400",
+    "kind": "known-bug",
+    "reason": "Same cause as GET /comments/{id}#400: spec says 400, app returns 404 for an invalid id.",
+    "evidence": "test.fail() 'BUG?' test in api-tests/tests/comments.spec.js; docs/agent-runs/batch-1-comments.md",
+    "approvedBy": "Enrique Rivera"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "POST /articles#422",
+    "kind": "known-bug",
+    "reason": "fixture: documented 422 is never returned",
+    "evidence": "fixture evidence",
+    "approvedBy": "Test Approver"
+  },
+  {
+    "id": "GET /articles/{id}#404",
+    "kind": "unreachable",
+    "reason": "fixture: no code path",
+    "evidence": "fixture evidence",
+    "approvedBy": "Test Approver"
+  },
+  {
+    "id": "GET /articles",
+    "kind": "unreachable",
+    "reason": "fixture: already covered, so the waiver is unneeded",
+    "evidence": "fixture evidence",
+    "approvedBy": "Test Approver"
+  },
+  {
+    "id": "GET /gone#200",
+    "kind": "known-bug",
+    "reason": "fixture: id no longer in the spec",
+    "evidence": "fixture evidence",
+    "approvedBy": "Test Approver"
+  }
+]

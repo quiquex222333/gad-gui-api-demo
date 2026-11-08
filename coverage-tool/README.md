@@ -41,9 +41,21 @@ or `node bin/coverage.js <command>`.
 | `--spec <file>` | `public/tools/schema/openapi_rest_demo.json` |
 | `--requests <file>` | `api-tests/.coverage/requests.jsonl` |
 | `--config <file>` | `coverage-tool/coverage.config.json` (built-in defaults if the file is absent) |
+| `--waivers <file>` | `coverage-tool/waivers.json` (no waivers if the file is absent) |
 | `--out-dir <dir>` | `coverage-tool/out` |
 
 Writes `report.json` and `gaps.json`, prints a console summary, and prints warnings to stderr.
+
+### Waivers
+
+`coverage-tool/waivers.json` is an array of
+`{ id, kind: "unreachable" | "known-bug", reason, evidence, approvedBy }` (all strings, non-empty, ids unique).
+`id` is a gap id as in `gaps.json` (`GET /x`, `GET /x#400`, `GET /x?query.q`).
+
+- `summary.scope` / `summary.global` stay RAW. `summary.effective.{scope,global}` is the same computation with waived
+  items removed from numerator and denominator; the console, `summary` and `html` outputs show both.
+- Applied waivers are listed in `report.waivers` (with `covered`). `gaps.json` and `diff` stay raw.
+- Warnings: `WAIVER_UNKNOWN_ID` (id no longer in the spec; not applied), `WAIVER_COVERED` (item is already covered).
 
 `diff <base.json> <head.json>`
 

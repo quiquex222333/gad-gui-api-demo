@@ -27,6 +27,7 @@ const miniArgs = (outDir) => [
   '--spec', path.join(FIX, 'mini-openapi.json'),
   '--requests', path.join(FIX, 'requests-mini.jsonl'),
   '--config', path.join(FIX, 'mini.config.json'),
+  '--waivers', path.join(FIX, 'mini.waivers.json'),
   '--out-dir', outDir,
 ];
 

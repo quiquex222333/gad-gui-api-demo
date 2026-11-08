@@ -6,6 +6,7 @@ const { parseArgs } = require('node:util');
 
 const { REPO_ROOT, TOOL_ROOT, toRepoRelative } = require('../src/paths');
 const { loadConfig, InputError, sha256 } = require('../src/config');
+const { loadWaivers } = require('../src/waivers');
 const { loadSpec } = require('../src/spec-loader');
 const { loadRequests } = require('../src/requests-loader');
 const { analyze } = require('../src/analyze');
@@ -29,6 +30,7 @@ report options:
   --spec <file>       OpenAPI spec (default: public/tools/schema/openapi_rest_demo.json)
   --requests <file>   Recorded requests JSONL (default: api-tests/.coverage/requests.jsonl)
   --config <file>     Config JSON (default: coverage-tool/coverage.config.json)
+  --waivers <file>    Waivers JSON (default: coverage-tool/waivers.json; none if absent)
   --out-dir <dir>     Output directory (default: coverage-tool/out)
 
 diff options:
@@ -58,18 +60,20 @@ async function cmdReport(values) {
   const specFile = path.resolve(values.spec || path.join(REPO_ROOT, 'public/tools/schema/openapi_rest_demo.json'));
   const reqFile = path.resolve(values.requests || path.join(REPO_ROOT, 'api-tests/.coverage/requests.jsonl'));
   const cfgFile = path.resolve(values.config || path.join(TOOL_ROOT, 'coverage.config.json'));
+  const waiversFile = path.resolve(values.waivers || path.join(TOOL_ROOT, 'waivers.json'));
   const outDir = path.resolve(values['out-dir'] || path.join(TOOL_ROOT, 'out'));
 
   const config = loadConfig(cfgFile);
   const spec = await loadSpec(specFile);
   const requests = loadRequests(reqFile);
+  const waivers = loadWaivers(waiversFile);
 
   const report = analyze(spec, requests, config, {
     toolVersion: pkg.version,
     specPath: toRepoRelative(specFile),
     requestsPath: toRepoRelative(reqFile),
     configPath: config.loaded ? toRepoRelative(cfgFile) : null,
-  });
+  }, waivers);
   const gaps = deriveGaps(report);
 
   const reportFile = path.join(outDir, 'report.json');
@@ -160,6 +164,7 @@ async function main(argv) {
         spec: { type: 'string' },
         requests: { type: 'string' },
         config: { type: 'string' },
+        waivers: { type: 'string' },
         'out-dir': { type: 'string' },
         out: { type: 'string', short: 'o' },
         diff: { type: 'string' },

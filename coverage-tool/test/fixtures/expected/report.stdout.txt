@@ -5,6 +5,16 @@ operations    5/6   83.33%     6/9    66.67%
 statuses      4/8   50.00%    5/11    45.45%
 parameters    6/7   85.71%     7/9    77.78%
 
+Effective coverage (3 waived, raw above is unchanged)
+dimension   scope  scope %  global  global %
+----------  -----  -------  ------  --------
+operations    4/5   80.00%     5/8    62.50%
+statuses      4/6   66.67%     5/9    55.56%
+parameters    6/7   85.71%     7/9    77.78%
+  waived [unreachable] GET /articles
+  waived [unreachable] GET /articles/{id}#404
+  waived [known-bug] POST /articles#422
+
 In-scope operations
 method  path              requests  statuses  params
 ------  ----------------  --------  --------  ------
@@ -20,7 +30,7 @@ Drift
   undocumented statuses: 1
   undocumented params:   1
 
-Warnings: 3 (3 distinct)
+Warnings: 5 (5 distinct)
 
 Request lines: total 15, invalid 1, non-test 2, null status 1, excluded 1, counted 10, unmatched 2
 
