@@ -1,6 +1,6 @@
 const BaseClient = require('./base.client');
 
-const PATHS = { list: '/articles', item: '/articles/{id}' };
+const PATHS = { list: '/articles', item: '/articles/{id}', archive: '/articles/{id}/archive' };
 
 class ArticlesClient extends BaseClient {
   list(params) {
@@ -11,24 +11,28 @@ class ArticlesClient extends BaseClient {
     return this.send('GET', PATHS.item, { pathParams: { id } });
   }
 
-  create(data) {
-    return this.send('POST', PATHS.list, { data });
+  create(data, headers) {
+    return this.send('POST', PATHS.list, { data, headers });
   }
 
-  put(id, data) {
-    return this.send('PUT', PATHS.item, { pathParams: { id }, data });
+  put(id, data, headers) {
+    return this.send('PUT', PATHS.item, { pathParams: { id }, data, headers });
   }
 
-  patch(id, data) {
-    return this.send('PATCH', PATHS.item, { pathParams: { id }, data });
+  patch(id, data, headers) {
+    return this.send('PATCH', PATHS.item, { pathParams: { id }, data, headers });
   }
 
-  delete(id) {
-    return this.send('DELETE', PATHS.item, { pathParams: { id } });
+  delete(id, data, headers) {
+    return this.send('DELETE', PATHS.item, { pathParams: { id }, data, headers });
   }
 
-  head(id) {
-    return this.send('HEAD', PATHS.item, { pathParams: { id } });
+  head(id, data, headers) {
+    return this.send('HEAD', PATHS.item, { pathParams: { id }, data, headers });
+  }
+
+  archive(id) {
+    return this.send('POST', PATHS.archive, { pathParams: { id } });
   }
 }
 
